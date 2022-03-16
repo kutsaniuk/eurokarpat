@@ -9,22 +9,22 @@
         First Column
       ----------------------------------------------- -->
         <v-col cols="12" sm="12" md="12" lg="3" class="px-xs-0">
-          <h4 class="font-weight-regular font-18">Address</h4>
-          <p class="mt-10">71 Amsteroum Avenue Cronish Night, NY 35098</p>
+          <h4 class="font-weight-regular font-18">{{$t('address')}}</h4>
+          <p class="mt-10">{{$t('location')}}</p>
         </v-col>
         <!-- -----------------------------------------------
         Second Column
       ----------------------------------------------- -->
         <v-col cols="12" sm="12" md="12" lg="3" class="px-xs-0">
-          <h4 class="font-weight-regular font-18">Phone</h4>
-          <p class="mt-10 mb-0">Reception : +205 123 4567</p>
+          <h4 class="font-weight-regular font-18">{{$t('phone')}}</h4>
+          <p class="mt-10 mb-0">{{$t('legalIssues')}} : <br>+380 (67) 006 02 06</p>
           <p>Office : +207 235 7890</p>
         </v-col>
         <!-- -----------------------------------------------
         Third Column
       ----------------------------------------------- -->
         <v-col cols="12" sm="12" md="12" lg="3" class="px-xs-0">
-          <h4 class="font-weight-regular font-18">Email</h4>
+          <h4 class="font-weight-regular font-18">{{$t('email')}}</h4>
           <p class="mt-10 mb-0">
             Office : <a class="dark-link" href="/">info@wrappixel.com</a>
           </p>
@@ -39,7 +39,7 @@
         Fourth Column
       ----------------------------------------------- -->
         <v-col cols="12" sm="12" md="12" lg="3" class="px-xs-0">
-          <h4 class="font-weight-regular font-18">Social</h4>
+          <h4 class="font-weight-regular font-18">{{$t('social')}}</h4>
 
           <div class="social-icons mt-10">
             <a href="#">
@@ -61,18 +61,17 @@
         </v-col>
       </v-row>
       <div class="footer-bottom-bar font-14">
-        <div class="d-block d-md-flex align-center">
+        <div class="d-block d-md-flex align-center justify-center">
           <p>
-            All Rights Reserved by
-            <a href="https://www.wrappixel.com/" class="link">wrappixel.com</a>
+            {{$t('copyright')}}
           </p>
-          <div class="ml-auto">
-            <div class="d-flex align-center">
-              <a href="/" class="link px-4">Terms of Use</a>
-              <a href="/" class="link px-4">Legal Disclaimer</a>
-              <a href="/" class="link px-4">Privacy Policy</a>
-            </div>
-          </div>
+<!--          <div class="ml-auto">-->
+<!--            <div class="d-flex align-center">-->
+<!--              <a href="/" class="link px-4">Terms of Use</a>-->
+<!--              <a href="/" class="link px-4">Legal Disclaimer</a>-->
+<!--              <a href="/" class="link px-4">Privacy Policy</a>-->
+<!--            </div>-->
+<!--          </div>-->
         </div>
       </div>
     </v-container>
@@ -93,4 +92,3 @@ export default {
   components: {},
 };
 </script>
- 

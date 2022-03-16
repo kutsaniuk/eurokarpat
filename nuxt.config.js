@@ -1,13 +1,15 @@
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
-  ssr: false,
+  ssr: true,
+
+  base: '/',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: "%s - Nuxt js UI Kit",
-    title: "NuxtJs UI kit | Free UI kit built with Vuetifyy",
+    titleTemplate: "ЄВРОКАРПАТСЬКА ІНІЦІАТИВА",
+    title: "ГРОМАДСЬКА ОРГАНІЗАЦІЯ 'ЄВРОКАРПАТСЬКА ІНІЦІАТИВА'",
     htmlAttrs: {
-      lang: "en"
+      lang: "uk"
     },
     meta: [
       { charset: "utf-8" },
@@ -15,7 +17,7 @@ export default {
       { hid: "description", name: "description", content: "" },
       { name: "format-detection", content: "telephone=no" }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.svg" }]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -37,11 +39,31 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
-    "@nuxtjs/vuetify"
+    "@nuxtjs/vuetify",
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: [
+    [
+      '@nuxtjs/i18n',
+      {
+        locales: [
+          {
+            code: 'en',
+            file: 'en-US.js'
+          },
+          {
+            code: 'uk',
+            file: 'uk-UA.js'
+          }
+        ],
+        lazy: true,
+        langDir: 'lang/',
+        defaultLocale: 'uk',
+        strategy: 'no_prefix'
+      }
+    ]
+  ],
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
