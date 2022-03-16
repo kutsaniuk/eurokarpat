@@ -45,13 +45,13 @@
               <n-link class="nav-link" nuxt to="/">{{$t('home')}}</n-link>
             </li>
             <li class="nav-item" text>
-              <n-link class="nav-link" nuxt to="/services">{{$t('howWeHelp')}}</n-link>
+              <n-link class="nav-link" nuxt to="/help">{{$t('howWeHelp')}}</n-link>
             </li>
             <li class="nav-item" text>
               <n-link class="nav-link" nuxt to="/about">{{$t('about')}}</n-link>
             </li>
             <li class="nav-item" text>
-              <n-link class="nav-link" nuxt to="/work">{{$t('contacts')}}</n-link>
+              <n-link class="nav-link" nuxt to="/contacts">{{$t('contacts')}}</n-link>
             </li>
             <template v-if="$vuetify.breakpoint.xsOnly">
               <li class="nav-item" text>
