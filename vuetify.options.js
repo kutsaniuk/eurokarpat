@@ -3,8 +3,8 @@ export default {
     dark: false,
     themes: {
       dark: {
-        primary: "#4a91ce",
-        accent: "#4a91ce",
+        primary: "#3d5aa6",
+        accent: "#3d5aa6",
         secondary: "#a73aeb",
         info: "#0164d3",
         warning: "#fec500",
@@ -12,8 +12,8 @@ export default {
         success: "#2cdd9b"
       },
       light: {
-        primary: "#4a91ce",
-        accent: "#4a91ce",
+        primary: "#3d5aa6",
+        accent: "#3d5aa6",
         secondary: "#a73aeb",
         info: "#0164d3",
         warning: "#fec500",

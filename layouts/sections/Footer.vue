@@ -26,13 +26,7 @@
         <v-col cols="12" sm="12" md="12" lg="3" class="px-xs-0">
           <h4 class="font-weight-regular font-18">{{$t('email')}}</h4>
           <p class="mt-10 mb-0">
-            Office : <a class="dark-link" href="/">info@wrappixel.com</a>
-          </p>
-          <p>
-            Site :
-            <a class="dark-link" href="https://www.wrappixel.com/"
-              >wrappixel.com</a
-            >
+            <a class="dark-link" href="mailto:eurocarpathian@gmail.com">eurocarpathian@gmail.com</a>
           </p>
         </v-col>
         <!-- -----------------------------------------------
@@ -42,7 +36,7 @@
           <h4 class="font-weight-regular font-18">{{$t('social')}}</h4>
 
           <div class="social-icons mt-10">
-            <a href="#">
+            <a target="_blank" href="https://www.facebook.com/%D0%93%D0%9E-%D0%84%D0%B2%D1%80%D0%BE%D0%BA%D0%B0%D1%80%D0%BF%D0%B0%D1%82%D1%81%D1%8C%D0%BA%D0%B0-%D1%96%D0%BD%D1%96%D1%86%D1%96%D0%B0%D1%82%D0%B8%D0%B2%D0%B0-100890395904430/">
               <i class="mdi mdi-facebook"></i>
             </a>
             <a href="#">
