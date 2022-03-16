@@ -20,6 +20,10 @@ export default {
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.svg" }]
   },
 
+  generate: {
+    dir: 'dist'
+  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ["~/assets/scss/style.scss"],
 
