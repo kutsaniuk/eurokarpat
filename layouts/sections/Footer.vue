@@ -40,15 +40,6 @@
               <i class="mdi mdi-facebook"></i>
             </a>
             <a href="#">
-              <i class="mdi mdi-twitter"></i>
-            </a>
-            <a href="#">
-              <i class="mdi mdi-google-plus"></i>
-            </a>
-            <a href="#">
-              <i class="mdi mdi-youtube"></i>
-            </a>
-            <a href="#">
               <i class="mdi mdi-instagram"></i>
             </a>
           </div>

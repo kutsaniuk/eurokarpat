@@ -34,7 +34,7 @@ export default {
 </script>
 <style lang="css" scoped>
   .mini-spacer {
-    background-image: url("~/assets/images/banner/bg.svg");
+    background-image: url("~/assets/images/banner/bg3.svg");
     background-position: right;
     background-size: 100%;
     height: calc(100vh - 85px);

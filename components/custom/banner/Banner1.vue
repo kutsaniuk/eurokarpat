@@ -8,9 +8,6 @@
         <v-row justify="center">
           <v-col cols="12" md="7" lg="6" class="d-flex align-center">
             <div class="text-center text-md-left">
-              <v-chip small class="bg-dark" text-color="white">
-                Creating Brands
-              </v-chip>
               <h2
                 class="
                   banner1-title
@@ -19,12 +16,10 @@
                   white--text
                 "
               >
-                ONE BILLON PEOPLE USE FACEBOOK
+                ГО «Єврокарпатська ініціатива»
               </h2>
               <p class="white--text op-8 font-weight-regular">
-                Pellentesque vehicula eros a dui pretium ornare. Phasellus
-                congue vel quam nec luctus.In accumsan at eros in dignissim.
-                Cras sodales nisi nonn accumsan.
+                ГО «Єврокарпатська ініціатива» створювалася з метою в першу чергу для відновлення інвестиційної привабливості Івано-Франківщини. Проте повномасштабний напад росії на Україну змінив пріоритети у нашій діяльності.
               </p>
               <div class="mt-16 pt-2">
                 <v-btn

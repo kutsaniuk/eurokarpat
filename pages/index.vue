@@ -1,32 +1,8 @@
 <template>
   <div>
-<!--    <Banner1 />-->
+    <TheHero />
+    <TheHelp />
 <!--    <AllCustomComponents/>-->
-
-    <client-only>
-      <script>
-        window.fbAsyncInit = function() {
-          FB.init({
-            appId            : 255881316760464,
-            autoLogAppEvents : true,
-            xfbml            : true,
-            version          : 'v13.0'
-          });
-
-          FB.api(
-            "/100890395904430/feed",
-            function (response) {
-              if (response && !response.error) {
-                console.log(response)
-              }
-            }
-          );
-        };
-
-
-      </script>
-      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
-    </client-only>
 
   </div>
 </template>
@@ -50,7 +26,8 @@ export default {
     return {};
   },
   components: {
-    Banner1: () => import("@/components/custom/banner/Banner1"),
+    TheHero: () => import("@/components/TheHero"),
+    TheHelp: () => import("@/components/TheHelp"),
     ComingSoon: () => import("@/components/shared/coming-soon/ComingSoon"),
     AllCustomComponents: () =>
       import("@/components/custom/AllCustomComponents"),

@@ -6,6 +6,7 @@
    <client-only>
      <v-app-bar
        app
+       absolute
        class="app-header position-relative navbar-light header1"
        flat
      >
@@ -14,20 +15,11 @@
          <div class="logo">
            <NLink to="/">
              <img
-               v-if="$i18n.locale !== 'en'"
                class="mt-sm-2 mb-2 mb-sm-0"
-               :width="$vuetify.breakpoint.mdAndUp ? 300 : 200"
-               src="@/assets/images/logos/logo-full.svg"
+               :width="$vuetify.breakpoint.mdAndUp ? 120 : 70"
+               src="@/assets/images/logos/logo.png"
                alt="logo"
-             />
-             <img
-               v-else
-               class="mt-sm-2 mb-2 mb-sm-0"
-               :width="$vuetify.breakpoint.mdAndUp ? 300 : 200"
-               src="@/assets/images/logos/logo-full-en.svg"
-               alt="logo"
-             />
-           </NLink>
+             />           </NLink>
          </div>
 
          <v-spacer></v-spacer>
