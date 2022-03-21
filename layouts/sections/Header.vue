@@ -159,7 +159,6 @@
 
         const yOffset = -65
         const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        console.log(y)
         window.scrollTo({top: y, behavior: 'smooth'});
       },
       scrollActiveLinkHandler() {
@@ -181,7 +180,6 @@
 
         window.onscroll = () => {
           const items = document.getElementsByClassName('nav-item')
-          console.log(window.scrollY)
           if (items) {
 
             items.forEach(item => {
