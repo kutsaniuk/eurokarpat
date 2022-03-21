@@ -14,8 +14,7 @@
                 повномасштабний напад росії на Україну змінив пріоритети у нашій діяльності.
               </p>
               <v-btn
-                v-if="$vuetify.breakpoint.xsOnly"
-                class="btn-custom-nm"
+                class="btn-custom-nm d-inline-block d-sm-none"
                 nuxt
                 x-large
                 color="primary"
