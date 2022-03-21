@@ -9,6 +9,7 @@
     position: relative;
 
     .nav-link {
+      transition: 0.2s ease-in;
       text-decoration: none;
       line-height: $nav-link-height;
       padding: $nav-link-padding;

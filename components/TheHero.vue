@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="main">
     <div class="mini-spacer">
       <v-container>
         <!-- -----------------------------------------------
@@ -7,12 +7,22 @@
         ----------------------------------------------- -->
         <v-row justify="center">
           <v-col cols="12" sm="10" md="12" lg="12">
-            <div class="text-center mt-2">
+            <div class="text-center mt-sm-2">
               <h2 class="ui-title font-weight-bold">ГО «Єврокарпатська ініціатива»</h2>
               <p>
                 Створювалася з метою в першу чергу для відновлення інвестиційної привабливості Івано-Франківщини. Проте
                 повномасштабний напад росії на Україну змінив пріоритети у нашій діяльності.
               </p>
+              <v-btn
+                v-if="$vuetify.breakpoint.xsOnly"
+                class="btn-custom-nm"
+                nuxt
+                x-large
+                color="primary"
+                elevation="0"
+              >
+                {{$t('donate')}}
+              </v-btn>
             </div>
           </v-col>
         </v-row>
@@ -38,11 +48,11 @@
     background-image: url("~/assets/images/banner/bg.svg");
     background-position: right;
     background-size: 100%;
-    height: calc(100vh - 85px);
+    height: 100vh;
   }
 
   .ui-title {
-    margin-top: 3rem;
+    margin-top: 5rem;
     font-size: 55px;
   }
 
@@ -60,13 +70,24 @@
   }
 
   @media (max-width: 767px) {
+    .mini-spacer {
+      display: flex;
+      align-items: center;
+    }
+
     .ui-title {
       font-size: 34px;
+      margin-top: 0;
     }
 
     p {
       font-size: 16px;
       width: 100%;
+    }
+
+    .btn-custom-nm {
+      font-size: 20px;
+      margin-top: 100px;
     }
   }
 </style>

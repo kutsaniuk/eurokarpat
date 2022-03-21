@@ -9,6 +9,23 @@
   .navbar-nav {
     align-items: center;
   }
+
+  .logo {
+    img {
+      transition: .3s;
+    }
+  }
+
+  &.v-app-bar--is-scrolled {
+    background-color: #ffffff !important;
+    box-shadow: 0 3px 5px 0 rgb(0 0 0 / 0%), 0 5px 8px 0 rgb(0 0 0 / 0%), 0 1px 14px 0 rgb(0 0 0 / 15%) !important;
+
+    .logo {
+      img {
+        width: 60px;
+      }
+    }
+  }
 }
 .common-links {
   padding: 0px;
