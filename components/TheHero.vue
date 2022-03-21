@@ -14,7 +14,7 @@
                 повномасштабний напад росії на Україну змінив пріоритети у нашій діяльності.
               </p>
               <v-btn
-                class="btn-custom-nm d-inline-block d-sm-none"
+                class="btn-custom-nm d-inline-block d-sm-none cta font-weight-bold"
                 nuxt
                 x-large
                 color="primary"
@@ -83,10 +83,12 @@
       font-size: 16px;
       width: 100%;
     }
+  }
 
-    .btn-custom-nm {
-      font-size: 20px;
-      margin-top: 100px;
-    }
+  .cta {
+    font-size: 18px;
+    margin-top: 100px;
+    box-shadow: 0 0px 0px 5px rgb(61 89 166 / 40%) !important;
+    text-transform: uppercase;
   }
 </style>
