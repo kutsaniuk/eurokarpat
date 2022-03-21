@@ -1,6 +1,6 @@
 <template>
   <div id="help">
-    <div class="mini-spacer pt-14">
+    <div class="mini-spacer pt-16">
       <v-container>
         <!-- -----------------------------------------------
             Start Form Banner1
@@ -45,7 +45,7 @@
                 >
                   <v-progress-circular
                     indeterminate
-                    color="grey lighten-5"
+                    color="primary"
                   ></v-progress-circular>
                 </v-row>
               </template>

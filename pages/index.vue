@@ -4,6 +4,8 @@
     <TheHelp />
     <TheCta />
     <TheBlog />
+    <TheAbout />
+    <TheCta />
 
 <!--    <AllCustomComponents/>-->
 
@@ -33,6 +35,7 @@ export default {
     TheHelp: () => import("@/components/TheHelp"),
     TheBlog: () => import("@/components/TheBlog"),
     TheCta: () => import("@/components/TheCta"),
+    TheAbout: () => import("@/components/TheAbout"),
     ComingSoon: () => import("@/components/shared/coming-soon/ComingSoon"),
     AllCustomComponents: () =>
       import("@/components/custom/AllCustomComponents"),

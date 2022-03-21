@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="blog-component mini-spacer">
+    <div class="blog-component mini-spacer pb-0">
       <v-container>
         <v-row justify="center">
           <v-col cols="12" md="6" lg="4">
@@ -27,7 +27,7 @@
                         >
                           <v-progress-circular
                             indeterminate
-                            color="grey lighten-5"
+                            color="primary"
                           ></v-progress-circular>
                         </v-row>
                       </template>
@@ -107,7 +107,7 @@
                         >
                           <v-progress-circular
                             indeterminate
-                            color="grey lighten-5"
+                            color="primary"
                           ></v-progress-circular>
                         </v-row>
                       </template>
@@ -181,7 +181,7 @@
                         >
                           <v-progress-circular
                             indeterminate
-                            color="grey lighten-5"
+                            color="primary"
                           ></v-progress-circular>
                         </v-row>
                       </template>
