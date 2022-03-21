@@ -141,3 +141,27 @@
     }
   }
 }
+
+.title-line {
+  position: relative;
+
+  &::after {
+    content: "";
+    width: 20%;
+    height: 2px;
+    background: #3d5aa6;
+    border-radius: 2px;
+    bottom: 0;
+    display: block;
+    margin: auto;
+    margin-top: 15px;
+  }
+}
+
+.shadow {
+  box-shadow: -20px 20px 0px 0px rgb(96 119 183 / 40%);
+
+  @media (max-width: 425px) {
+    box-shadow: none;
+  }
+}

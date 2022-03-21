@@ -7,7 +7,7 @@
      <v-app-bar
        app
        absolute
-       class="app-header position-relative navbar-light header1"
+       class="app-header position-relative navbar-light header1 px-0"
        flat
      >
        <v-container class="py-0 fill-height">
@@ -23,7 +23,7 @@
          </div>
 
          <v-spacer></v-spacer>
-         <v-btn class="d-block d-md-none" text @click="toggleClass()">
+         <v-btn class="d-block d-md-none" icon @click="toggleClass()">
            <v-app-bar-nav-icon />
          </v-btn>
          <!-- Desktop view Navigation -->
