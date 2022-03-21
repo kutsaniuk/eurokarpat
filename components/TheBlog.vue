@@ -18,7 +18,20 @@
                       aspect-ratio="1.7"
                       alt="blog"
                       class="blog-img"
-                    />
+                    >
+                      <template v-slot:placeholder>
+                        <v-row
+                          class="fill-height ma-0"
+                          align="center"
+                          justify="center"
+                        >
+                          <v-progress-circular
+                            indeterminate
+                            color="grey lighten-5"
+                          ></v-progress-circular>
+                        </v-row>
+                      </template>
+                    </v-img>
                   </template>
                   <template v-slot:default="dialog">
                     <v-card>
@@ -38,7 +51,8 @@
                       </video>
                       <v-card-text>
                         <p class="mt-5">
-                          Спільна робота ГО «Єврокарпатська ініціатива» і ГО «Спілка волонтерів Прикарпаття» за сприяння Галина
+                          Спільна робота ГО «Єврокарпатська ініціатива» і ГО «Спілка волонтерів Прикарпаття» за сприяння
+                          Галина
                           Карп та Ігор Лукинів дає результат.
                           Прикарпаття отримало черговий гуманітарний вантаж з Європейського союзу. Така підтримка для
                           українських захисників дуже важлива.
@@ -84,7 +98,20 @@
                       aspect-ratio="1.7"
                       alt="blog"
                       class="blog-img"
-                    />
+                    >
+                      <template v-slot:placeholder>
+                        <v-row
+                          class="fill-height ma-0"
+                          align="center"
+                          justify="center"
+                        >
+                          <v-progress-circular
+                            indeterminate
+                            color="grey lighten-5"
+                          ></v-progress-circular>
+                        </v-row>
+                      </template>
+                    </v-img>
                   </template>
                   <template v-slot:default="dialog">
                     <v-card>
@@ -145,7 +172,20 @@
                       aspect-ratio="1.7"
                       alt="blog"
                       class="blog-img"
-                    />
+                    >
+                      <template v-slot:placeholder>
+                        <v-row
+                          class="fill-height ma-0"
+                          align="center"
+                          justify="center"
+                        >
+                          <v-progress-circular
+                            indeterminate
+                            color="grey lighten-5"
+                          ></v-progress-circular>
+                        </v-row>
+                      </template>
+                    </v-img>
                   </template>
                   <template v-slot:default="dialog">
                     <v-card>
