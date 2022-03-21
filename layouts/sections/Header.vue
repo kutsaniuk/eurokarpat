@@ -34,16 +34,16 @@
          >
            <ul class="navbar-nav">
              <li class="nav-item" text>
-               <n-link class="nav-link" nuxt to="/">{{$t('home')}}</n-link>
+               <a class="nav-link" href="#main" @click.prevent="goTo">{{$t('home')}}</a>
              </li>
              <li class="nav-item" text>
-               <n-link class="nav-link" nuxt to="/help">{{$t('howWeHelp')}}</n-link>
+               <a class="nav-link" href="#help" @click.prevent="goTo">{{$t('howWeHelp')}}</a>
              </li>
              <li class="nav-item" text>
-               <n-link class="nav-link" nuxt to="/about">{{$t('about')}}</n-link>
+               <a class="nav-link" href="#about" @click.prevent="goTo">{{$t('about')}}</a>
              </li>
              <li class="nav-item" text>
-               <n-link class="nav-link" nuxt to="/contacts">{{$t('contacts')}}</n-link>
+               <a class="nav-link" href="#contacts" @click.prevent="goTo">{{$t('contacts')}}</a>
              </li>
              <template v-if="$vuetify.breakpoint.xsOnly">
                <li class="nav-item" text>
@@ -140,6 +140,17 @@
       toggleClass: function (event) {
         this.isActive = !this.isActive;
       },
-    },
+      goTo(e) {
+        const el = document.querySelector(e.target.hash)
+
+        if (!el) {
+          return
+        }
+
+        el.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    }
   };
 </script>

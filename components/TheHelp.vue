@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="help">
     <div class="mini-spacer pt-14">
       <v-container>
         <!-- -----------------------------------------------

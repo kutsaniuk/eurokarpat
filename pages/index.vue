@@ -36,6 +36,6 @@ export default {
     ComingSoon: () => import("@/components/shared/coming-soon/ComingSoon"),
     AllCustomComponents: () =>
       import("@/components/custom/AllCustomComponents"),
-  },
+  }
 };
 </script>
