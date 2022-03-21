@@ -1,14 +1,14 @@
 <template>
   <div>
-    <div>
+    <div class="mini-spacer pt-14">
       <v-container>
         <!-- -----------------------------------------------
             Start Form Banner1
         ----------------------------------------------- -->
         <v-row justify="center">
           <v-col cols="12" sm="10" md="9" lg="12">
-            <div class="text-center mt-5 pt-2">
-              <h2 class="ui-title font-weight-bold title-line">Як ми допомагаємо?</h2>
+            <div class="text-center">
+              <h2 class="ui-title font-weight-bold title-line mt-0">Як ми допомагаємо?</h2>
             </div>
           </v-col>
         </v-row>

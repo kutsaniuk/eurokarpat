@@ -84,7 +84,7 @@
            class="d-none d-lg-flex btn-custom-nm ml-5"
            nuxt
            color="primary"
-           to="/"
+           to="/donate"
            elevation="0"
          >
            {{$t('donate')}}

@@ -2,6 +2,9 @@
   <div>
     <TheHero />
     <TheHelp />
+    <TheCta />
+    <TheBlog />
+
 <!--    <AllCustomComponents/>-->
 
   </div>
@@ -28,6 +31,8 @@ export default {
   components: {
     TheHero: () => import("@/components/TheHero"),
     TheHelp: () => import("@/components/TheHelp"),
+    TheBlog: () => import("@/components/TheBlog"),
+    TheCta: () => import("@/components/TheCta"),
     ComingSoon: () => import("@/components/shared/coming-soon/ComingSoon"),
     AllCustomComponents: () =>
       import("@/components/custom/AllCustomComponents"),
