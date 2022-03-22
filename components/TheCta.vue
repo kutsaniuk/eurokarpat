@@ -34,7 +34,6 @@
 </template>
 <script>
 export default {
-  name: "C2a1",
   data() {
     return {};
   },

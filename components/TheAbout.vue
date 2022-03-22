@@ -48,7 +48,6 @@
 </template>
 <script>
   export default {
-    name: "FormBanner1",
     data() {
       return {};
     },

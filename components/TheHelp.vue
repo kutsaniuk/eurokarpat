@@ -58,6 +58,5 @@
   .help-desc p {
     font-size: 18px;
     color: rgba(62, 69, 85, 0.9);
-    /*line-height: 1.6;*/
   }
 </style>
