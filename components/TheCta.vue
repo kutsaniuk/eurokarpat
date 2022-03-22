@@ -7,7 +7,7 @@
         ----------------------------------------------- -->
         <div class="d-block d-md-flex align-center">
           <h2 class="c2a-title white--text font-weight-medium">
-            Допомагай тим, що найкраще вмієш
+            {{$t('donateTitle')}}
           </h2>
           <div class="ml-auto mt-5 mt-md-0">
             <v-btn

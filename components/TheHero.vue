@@ -2,16 +2,12 @@
   <div id="main">
     <div class="mini-spacer">
       <v-container>
-        <!-- -----------------------------------------------
-            Start Banner Text
-        ----------------------------------------------- -->
         <v-row justify="center">
           <v-col cols="12" sm="10" md="12" lg="12">
             <div class="text-center mt-sm-2">
-              <h2 class="ui-title font-weight-bold">ГО «Єврокарпатська ініціатива»</h2>
+              <h2 class="ui-title font-weight-bold"> {{$t('heroTitle')}}</h2>
               <p>
-                Створювалася з метою в першу чергу для відновлення інвестиційної привабливості Івано-Франківщини. Проте
-                повномасштабний напад росії на Україну змінив пріоритети у нашій діяльності.
+                {{$t('heroDesc')}}
               </p>
               <v-btn
                 class="btn-custom-nm d-inline-block d-sm-none cta font-weight-bold"
@@ -25,17 +21,12 @@
             </div>
           </v-col>
         </v-row>
-
-        <!-- -----------------------------------------------
-            End Banner Text
-        ----------------------------------------------- -->
       </v-container>
     </div>
   </div>
 </template>
 <script>
   export default {
-    name: "BannerText",
     data() {
       return {};
     },
@@ -88,7 +79,7 @@
   .cta {
     font-size: 18px;
     margin-top: 100px;
-    box-shadow: 0 0px 0px 5px rgb(61 89 166 / 40%) !important;
+    box-shadow: 0 0 0 5px rgb(61 89 166 / 40%) !important;
     text-transform: uppercase;
   }
 </style>

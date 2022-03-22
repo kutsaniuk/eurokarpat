@@ -38,7 +38,7 @@
                       <v-toolbar
                         color="primary"
                         dark
-                      >На прикарпаття прибув черговий гуманітарний вантаж з ЄС
+                      >{{$t('postTitle1')}}
                         <v-spacer></v-spacer>
                         <v-btn icon @click="dialog.value = false">
                           <v-icon>mdi-close</v-icon>
@@ -51,19 +51,14 @@
                       </video>
                       <v-card-text>
                         <p class="mt-5">
-                          Спільна робота ГО «Єврокарпатська ініціатива» і ГО «Спілка волонтерів Прикарпаття» за сприяння
-                          Галина
-                          Карп та Ігор Лукинів дає результат.
-                          Прикарпаття отримало черговий гуманітарний вантаж з Європейського союзу. Така підтримка для
-                          українських захисників дуже важлива.
-                          Разом до перемоги!
+                          {{$t('postDesc1')}}
                         </p>
                       </v-card-text>
                     </v-card>
                   </template>
                 </v-dialog>
                 <div class="date-badge bg-info-grediant">
-                  Бер <span>17</span>
+                  {{$t('postDate')}} <span>17</span>
                 </div>
               </div>
               <div>
@@ -74,11 +69,10 @@
                     text-decoration-none
                     font-weight-medium font-18
                   "
-                >На прикарпаття прибув черговий гуманітарний вантаж з ЄС
-                </div
-                >
+                >{{$t('postTitle1')}}
+                </div>
                 <p class=" mt-10 mb-10">
-                  Спільна робота ГО «Єврокарпатська ініціатива» і ГО «Спілка волонтерів Прикарпаття» ...
+                  {{$t('postDescShort1')}}
                 </p>
               </div>
             </v-card>
@@ -118,7 +112,7 @@
                       <v-toolbar
                         color="primary"
                         dark
-                      >Спільно можна зробити багато. Україна переможе!
+                      >{{$t('postTitle2')}}
                         <v-spacer></v-spacer>
                         <v-btn icon @click="dialog.value = false">
                           <v-icon>mdi-close</v-icon>
@@ -131,14 +125,14 @@
                       </video>
                       <v-card-text>
                         <p class="mt-5">
-                          Спільна допомога з Європейського союзу продовжує прибувати на Прикарпаття
+                          {{$t('postDesc2')}}
                         </p>
                       </v-card-text>
                     </v-card>
                   </template>
                 </v-dialog>
                 <div class="date-badge bg-info-grediant">
-                  Бер <span>19</span>
+                  {{$t('postDate')}} <span>19</span>
                 </div>
               </div>
               <div>
@@ -149,10 +143,10 @@
                     text-decoration-none
                     font-weight-medium font-18
                   "
-                >Спільно можна зробити багато. Україна переможе!
+                >{{$t('postTitle2')}}
                 </div>
                 <p class=" mt-10 mb-10">
-                  Спільна допомога з Європейського союзу продовжує прибувати на Прикарпаття
+                  {{$t('postDesc2')}}
                 </p>
               </div>
             </v-card>
@@ -192,7 +186,7 @@
                       <v-toolbar
                         color="primary"
                         dark
-                      >Вантаж уже прибув на Київщину
+                      >{{$t('postTitle3')}}
                         <v-spacer></v-spacer>
                         <v-btn icon @click="dialog.value = false">
                           <v-icon>mdi-close</v-icon>
@@ -205,14 +199,14 @@
                       </video>
                       <v-card-text>
                         <p class="mt-5">
-                          ГО «Єврокарпатська ініціатива» відправила гуманітарну допомогу для захисників столиці
+                          {{$t('postDesc3')}}
                         </p>
                       </v-card-text>
                     </v-card>
                   </template>
                 </v-dialog>
                 <div class="date-badge bg-info-grediant">
-                  Бер <span>20</span>
+                  {{$t('postDate')}} <span>20</span>
                 </div>
               </div>
               <div>
@@ -223,11 +217,10 @@
                     text-decoration-none
                     font-weight-medium font-18
                   "
-                >Вантаж уже прибув на Київщину
-                </div
-                >
+                >{{$t('postTitle3')}}
+                </div>
                 <p class=" mt-10 mb-10">
-                  ГО «Єврокарпатська ініціатива» відправила гуманітарну допомогу для захисників столиці
+                  {{$t('postDesc3')}}
                 </p>
               </div>
             </v-card>
