@@ -1,6 +1,10 @@
 .navbar-light {
   .navbar-nav {
     .nav-item {
+      &-divider {
+        display: none;
+      }
+
       .nav-link {
         color: #8d97ad;
         opacity: 1;
@@ -17,12 +21,15 @@
   }
 }
 
+
+
 @media (max-width: 767px) {
   .header1,
   .header2 {
     .navigation {
       display: none;
     }
+
     .navbar-nav {
       position: absolute;
       left: 0;
@@ -31,6 +38,9 @@
       flex-direction: column;
       .nav-item .nav-link {
         line-height: 55px !important;
+      }
+      .nav-item-divider {
+        display: block;
       }
     }
   }

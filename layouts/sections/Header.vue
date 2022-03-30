@@ -43,13 +43,13 @@
               <li class="nav-item" text>
                 <a class="nav-link" href="#contacts" @click.prevent="goTo">{{$t('contacts')}}</a>
               </li>
-              <template v-if="$vuetify.breakpoint.xsOnly">
-                <li class="nav-item" text>
-                  <v-divider></v-divider>
-                  <div class="nav-link">
+              <li class="nav-item" text>
+                <v-divider class="nav-item-divider"></v-divider>
+                <div class="nav-link">
                   <v-btn
                     class="btn-custom-nm"
                     nuxt
+                    :small="$vuetify.breakpoint.smAndDown"
                     to="/donate"
                     color="primary"
                     block
@@ -57,13 +57,12 @@
                   >
                     {{$t('donate')}}
                   </v-btn>
-                  </div>
-                </li>
-              </template>
+                </div>
+              </li>
             </ul>
           </div>
           <!-- login-regiter -->
-          <v-btn
+         <!-- <v-btn
             class="d-none d-md-flex d-lg-flex btn-custom-nm ml-5"
             nuxt
             :small="$vuetify.breakpoint.smAndDown"
@@ -72,14 +71,14 @@
             elevation="0"
           >
             {{$t('donate')}}
-          </v-btn>
+          </v-btn>-->
 
           <v-tooltip :disabled="$vuetify.breakpoint.xsOnly" bottom>
             <template v-slot:activator="{ on, attrs }">
               <v-btn
                 v-bind="attrs"
                 v-on="on"
-                class="btn-custom-nm ml-5"
+                class="btn-custom-nm"
                 icon
                 v-if="$i18n.locale !== 'en'"
                 @click.prevent="$i18n.setLocale('en')"
@@ -90,7 +89,7 @@
               <v-btn
                 v-bind="attrs"
                 v-on="on"
-                class="btn-custom-nm ml-5"
+                class="btn-custom-nm"
                 icon
                 v-else
                 @click.prevent="$i18n.setLocale('uk')"
