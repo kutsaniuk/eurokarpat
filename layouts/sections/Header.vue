@@ -136,13 +136,23 @@
       };
     },
     mounted() {
-      this.scrollActiveLinkHandler()
+      this.$nextTick(() => {
+        this.scrollActiveLinkHandler()
+      })
     },
     methods: {
       toggleClass: function (event) {
         this.isActive = !this.isActive;
       },
-      goTo(e) {
+      async goTo(e) {
+        if (this.$route.path === '/donate') {
+          await this.$router.push('/')
+          setTimeout(() => {
+            this.goTo(e)
+          }, 100)
+          return
+        }
+
         const el = document.querySelector(e.target.hash)
 
         if (!el) {
@@ -171,11 +181,13 @@
 
         links.forEach(hash => {
           const el = document.querySelector(hash)
-          linkItems.push({
-            hash,
-            start: el.getBoundingClientRect().top + window.pageYOffset - 150,
-            end: el.getBoundingClientRect().bottom - 150
-          })
+          if (el) {
+            linkItems.push({
+              hash,
+              start: el.getBoundingClientRect().top + window.pageYOffset - 150,
+              end: el.getBoundingClientRect().bottom - 150
+            })
+          }
         })
 
         window.onscroll = () => {
@@ -187,7 +199,6 @@
             })
 
             linkItems.forEach(({start, end,  hash}) => {
-              console.log(start, end, window.scrollY)
               if (window.scrollY > start && window.scrollY < end) {
                 const el = document.querySelector(`[href="${hash}"]`)
 

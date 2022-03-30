@@ -38,5 +38,13 @@ export default {
   aboutDesc: '<p>NGO "Eurocarpathian initiative" had transformed into a non-governmental organization, which carries out charitable activities.</p>' +
     '<p>The war continues on all fronts and requires significant logistics. That is why the Eurocarpathian Initiative has decided to properly provide all the necessary residents of the Ivano-Frankivsk region and temporarily displaced citizens of Ukraine, where our organization began its activities.</p>' +
     '<p>In addition, the Eurocarpathian initiative has initiated and continued to volunteer materially providing heroic soldiers of the Armed Forces of Ukraine waging heavy battles on the front line.</p>' +
-    '<p>At the end of the war, the Eurocarpathian initiative will continue its activity, we will return to the fundamental goals and expand them due to the necessary reconstruction of the regions destroyed during the war.</p>'
+    '<p>At the end of the war, the Eurocarpathian initiative will continue its activity, we will return to the fundamental goals and expand them due to the necessary reconstruction of the regions destroyed during the war.</p>',
+
+  companyName: 'Company name',
+  iban: 'IBAN',
+  swift: 'SWIFT',
+  bankName: 'Name of the bank',
+  correspondentBanks: 'Correspondent banks',
+  correspondentBank: 'Correspondent bank',
+  account: 'Account',
 }

@@ -13,7 +13,7 @@
             <v-btn
               nuxt
               large
-              to="/"
+              to="/donate"
               class="btn-custom-md text-uppercase"
               outlined
               color="white"
