@@ -61,17 +61,6 @@
               </li>
             </ul>
           </div>
-          <!-- login-regiter -->
-         <!-- <v-btn
-            class="d-none d-md-flex d-lg-flex btn-custom-nm ml-5"
-            nuxt
-            :small="$vuetify.breakpoint.smAndDown"
-            color="primary"
-            to="/donate"
-            elevation="0"
-          >
-            {{$t('donate')}}
-          </v-btn>-->
 
           <v-tooltip :disabled="$vuetify.breakpoint.xsOnly" bottom>
             <template v-slot:activator="{ on, attrs }">
