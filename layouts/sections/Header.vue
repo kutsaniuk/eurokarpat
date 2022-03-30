@@ -49,7 +49,6 @@
                   <v-btn
                     class="btn-custom-nm"
                     nuxt
-                    :small="$vuetify.breakpoint.smAndDown"
                     to="/donate"
                     color="primary"
                     block
