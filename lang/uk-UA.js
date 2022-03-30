@@ -47,4 +47,5 @@ export default {
   correspondentBanks: 'Банки кореспонденти',
   correspondentBank: 'Банки кореспондент',
   account: 'Рахунок',
+  copied: 'Скопійовано!',
 }

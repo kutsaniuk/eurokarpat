@@ -47,4 +47,5 @@ export default {
   correspondentBanks: 'Correspondent banks',
   correspondentBank: 'Correspondent bank',
   account: 'Account',
+  copied: 'Copied!',
 }

@@ -11,7 +11,7 @@
             <v-list-item :two-line="value.length < 50"
                          :three-line="value.length > 50"
                          :key="key"
-                         :id="key + value"
+                         :id="key + value + data.title"
                          @click="copy(value, key)"
                          v-for="(value, key) of data.bank">
               <v-list-item-content>
@@ -22,7 +22,7 @@
               </v-list-item-content>
               <v-list-item-action>
                 <v-list-item-action-text class="primary--text">
-                  Copied!
+                  {{$t('copied')}}
                 </v-list-item-action-text>
               </v-list-item-action>
             </v-list-item>
@@ -34,7 +34,7 @@
                 <v-list-item :two-line="value.length < 50"
                              :three-line="value.length > 50"
                              :key="key + index"
-                             :id="key + value"
+                             :id="key + value + data.title"
                              @click="copy(value, key)"
                              v-for="(value, key) of bank">
                   <v-list-item-content>
@@ -45,7 +45,7 @@
                   </v-list-item-content>
                   <v-list-item-action>
                     <v-list-item-action-text class="primary--text">
-                      Copied!
+                      {{$t('copied')}}
                     </v-list-item-action-text>
                   </v-list-item-action>
                 </v-list-item>
@@ -76,7 +76,7 @@
         copyText.setSelectionRange(0, 99999) /* For mobile devices */
         document.execCommand('copy')
         setTimeout(() => {
-          document.getElementById(key + value).classList.remove('v-item--active')
+          document.getElementById(key + value + this.data.title).classList.remove('v-item--active')
         }, 2000)
       }
     }
