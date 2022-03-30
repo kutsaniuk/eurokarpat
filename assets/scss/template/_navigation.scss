@@ -18,6 +18,10 @@
       font-family: $nav-link-font-family;
       opacity: 0.5;
       font-size: 16px;
+
+      @media (max-width: 1024px) {
+        font-size: 14px;
+      }
     }
     &:hover,
     &.active {

@@ -10,22 +10,20 @@
         class="app-header navbar-light header1 px-0"
         flat
       >
-        <v-container class="py-0 fill-height">
+        <v-container class="py-0 px-0 px-sm-8 fill-height">
           <!-- Logo -->
           <div class="logo">
             <NLink to="/">
               <img
                 class="mt-sm-2 mb-2 mb-sm-0"
-                :width="$vuetify.breakpoint.mdAndUp ? 120 : 70"
+                :width="$vuetify.breakpoint.lgAndUp ? 120 : 70"
                 src="@/assets/images/logos/logo.png"
                 alt="logo"
               /></NLink>
           </div>
 
           <v-spacer></v-spacer>
-          <v-btn class="d-block d-md-none" icon @click="toggleClass()">
-            <v-app-bar-nav-icon/>
-          </v-btn>
+
           <!-- Desktop view Navigation -->
           <div
             class="navigation"
@@ -47,8 +45,9 @@
               </li>
               <template v-if="$vuetify.breakpoint.xsOnly">
                 <li class="nav-item" text>
+                  <v-divider class="py-5"></v-divider>
                   <v-btn
-                    class="btn-custom-nm ml-5"
+                    class="btn-custom-nm mb-10"
                     nuxt
                     to="/donate"
                     color="primary"
@@ -57,32 +56,14 @@
                     {{$t('donate')}}
                   </v-btn>
                 </li>
-                <li class="nav-item py-3" text>
-                  <v-btn
-                    class="btn-custom-nm ml-5"
-                    icon
-                    v-if="$i18n.locale !== 'en'"
-                    @click.prevent="$i18n.setLocale('en')"
-                  >
-                    <img width="24" src="@/assets/images/lang/us.svg" alt="">
-                  </v-btn>
-
-                  <v-btn
-                    class="btn-custom-nm ml-5"
-                    icon
-                    v-else
-                    @click.prevent="$i18n.setLocale('uk')"
-                  >
-                    <img width="24" src="@/assets/images/lang/ua.svg" alt="">
-                  </v-btn>
-                </li>
               </template>
             </ul>
           </div>
           <!-- login-regiter -->
           <v-btn
-            class="d-none d-sm-flex d-md-flex d-lg-flex btn-custom-nm ml-5"
+            class="d-none d-md-flex d-lg-flex btn-custom-nm ml-5"
             nuxt
+            :small="$vuetify.breakpoint.smAndDown"
             color="primary"
             to="/donate"
             elevation="0"
@@ -95,23 +76,23 @@
               <v-btn
                 v-bind="attrs"
                 v-on="on"
-                class="d-none d-lg-flex btn-custom-nm ml-5"
+                class="btn-custom-nm ml-5"
                 icon
                 v-if="$i18n.locale !== 'en'"
                 @click.prevent="$i18n.setLocale('en')"
               >
-                <img width="24" src="@/assets/images/lang/us.svg" alt="">
+                <img :width="$vuetify.breakpoint.smAndDown ? 18 : 24" src="@/assets/images/lang/us.svg" alt="">
               </v-btn>
 
               <v-btn
                 v-bind="attrs"
                 v-on="on"
-                class="d-none d-lg-flex btn-custom-nm ml-5"
+                class="btn-custom-nm ml-5"
                 icon
                 v-else
                 @click.prevent="$i18n.setLocale('uk')"
               >
-                <img width="24" src="@/assets/images/lang/ua.svg" alt="">
+                <img :width="$vuetify.breakpoint.smAndDown ? 18 : 24" src="@/assets/images/lang/ua.svg" alt="">
               </v-btn>
             </template>
             <span>
@@ -119,6 +100,10 @@
             <template v-else>English</template>
           </span>
           </v-tooltip>
+
+          <v-btn class="d-block d-md-none" icon @click="toggleClass()">
+            <v-app-bar-nav-icon/>
+          </v-btn>
         </v-container>
       </v-app-bar>
     </client-only>
