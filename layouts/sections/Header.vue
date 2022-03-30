@@ -45,16 +45,19 @@
               </li>
               <template v-if="$vuetify.breakpoint.xsOnly">
                 <li class="nav-item" text>
-                  <v-divider class="py-5"></v-divider>
+                  <v-divider></v-divider>
+                  <div class="nav-link">
                   <v-btn
-                    class="btn-custom-nm mb-10"
+                    class="btn-custom-nm"
                     nuxt
                     to="/donate"
                     color="primary"
+                    block
                     elevation="0"
                   >
                     {{$t('donate')}}
                   </v-btn>
+                  </div>
                 </li>
               </template>
             </ul>
@@ -71,7 +74,7 @@
             {{$t('donate')}}
           </v-btn>
 
-          <v-tooltip bottom>
+          <v-tooltip :disabled="$vuetify.breakpoint.xsOnly" bottom>
             <template v-slot:activator="{ on, attrs }">
               <v-btn
                 v-bind="attrs"
