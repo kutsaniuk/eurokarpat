@@ -50,6 +50,7 @@
                   <v-btn
                     class="btn-custom-nm ml-5"
                     nuxt
+                    to="/donate"
                     color="primary"
                     elevation="0"
                   >
@@ -80,7 +81,7 @@
           </div>
           <!-- login-regiter -->
           <v-btn
-            class="d-none d-lg-flex btn-custom-nm ml-5"
+            class="d-none d-sm-flex d-md-flex d-lg-flex btn-custom-nm ml-5"
             nuxt
             color="primary"
             to="/donate"

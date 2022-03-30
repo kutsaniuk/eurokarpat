@@ -12,6 +12,7 @@
               <v-btn
                 class="btn-custom-nm d-inline-block d-sm-none cta font-weight-bold"
                 nuxt
+                to="/donate"
                 x-large
                 color="primary"
                 elevation="0"
