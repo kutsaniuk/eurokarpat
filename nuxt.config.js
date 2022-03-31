@@ -29,7 +29,7 @@ export default {
 
   // Customize the progress-bar color
   loading: {
-    color: "DodgerBlue",
+    color: "primary",
     height: "5px",
     continuous: true,
     duration: 3000

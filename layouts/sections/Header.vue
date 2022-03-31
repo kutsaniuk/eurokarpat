@@ -44,7 +44,7 @@
                 <a class="nav-link" href="#contacts" @click.prevent="goTo">{{$t('contacts')}}</a>
               </li>
               <li class="nav-item" text>
-                <nuxt-link class="nav-link" nuxt to="/requisites">{{$t('requisites')}}</nuxt-link>
+                <NLink class="nav-link" nuxt to="/requisites">{{$t('requisites')}}</NLink>
               </li>
               <li class="nav-item" text>
                 <v-divider class="nav-item-divider"></v-divider>
