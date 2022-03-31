@@ -55,6 +55,9 @@ export default {
   usd: 'UNITED STATES DOLLAR',
   eur: 'EURO',
   crypto: 'CRYPTOCURRENCY',
-  BTCpay: 'Pay BTC',
-  ETHpay: 'Pay ETH',
+  BTCpay: 'Donate BTC',
+  ETHpay: 'Donate ETH',
+
+  requisites: 'Payment details',
+  requisitesDesc: 'Cryptocurrency and SWIFT transfers from abroad'
 }

@@ -10,9 +10,9 @@
                 {{$t('heroDesc')}}
               </p>
               <v-btn
-                class="btn-custom-nm d-inline-flex d-sm-none cta font-weight-bold"
+                class="btn-custom-nm d-inline-flex d-lg-none cta font-weight-bold"
                 nuxt
-                to="/donate"
+                href="https://eci.diaka.ua/eci-eng"
                 x-large
                 color="primary"
                 elevation="0"

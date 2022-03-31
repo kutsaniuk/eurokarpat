@@ -16,7 +16,7 @@
             <NLink to="/">
               <img
                 class="mt-sm-2 mb-2 mb-sm-0"
-                :width="$vuetify.breakpoint.lgAndUp ? 120 : 70"
+                :width="$vuetify.breakpoint.lgAndUp ? 120 : 60"
                 src="@/assets/images/logos/logo.png"
                 alt="logo"
               /></NLink>
@@ -44,12 +44,15 @@
                 <a class="nav-link" href="#contacts" @click.prevent="goTo">{{$t('contacts')}}</a>
               </li>
               <li class="nav-item" text>
+                <nuxt-link class="nav-link" nuxt to="/requisites">{{$t('requisites')}}</nuxt-link>
+              </li>
+              <li class="nav-item" text>
                 <v-divider class="nav-item-divider"></v-divider>
                 <div class="nav-link">
                   <v-btn
                     class="btn-custom-nm"
                     nuxt
-                    to="/donate"
+                    href="https://eci.diaka.ua/eci-eng"
                     color="primary"
                     block
                     elevation="0"
@@ -91,7 +94,7 @@
           </span>
           </v-tooltip>
 
-          <v-btn class="d-block d-md-none" icon @click="toggleClass()">
+          <v-btn class="d-block d-lg-none" icon @click="toggleClass()">
             <v-app-bar-nav-icon/>
           </v-btn>
         </v-container>
@@ -111,21 +114,16 @@
         isActive: false,
       };
     },
-    mounted() {
-      this.$nextTick(() => {
-        this.scrollActiveLinkHandler()
-      })
-    },
     methods: {
       toggleClass: function (event) {
         this.isActive = !this.isActive;
       },
       async goTo(e) {
-        if (this.$route.path === '/donate') {
+        if (this.$route.path === '/requisites') {
           await this.$router.push('/')
           setTimeout(() => {
             this.goTo(e)
-          }, 100)
+          }, 200)
           return
         }
 
@@ -143,47 +141,14 @@
 
         e.target.classList.add('nuxt-link-exact-active', 'nuxt-link-active')
 
-        const yOffset = -65
-        const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({top: y, behavior: 'smooth'});
+        if (e.target.hash === '#contacts') {
+          el.scrollIntoView()
+        } else {
+          window.scrollTo({top: el.offsetTop - 65, behavior: 'smooth'});
+        }
+        console.log(e.target.hash, [el])
       },
-      scrollActiveLinkHandler() {
-        if (this.$vuetify.breakpoint.xsOnly) {
-          return
-        }
 
-        const linkItems = []
-        const links = ['#main', '#help', '#about', '#contacts']
-
-        links.forEach(hash => {
-          const el = document.querySelector(hash)
-          if (el) {
-            linkItems.push({
-              hash,
-              start: el.getBoundingClientRect().top + window.pageYOffset - 150,
-              end: el.getBoundingClientRect().bottom - 150
-            })
-          }
-        })
-
-        window.onscroll = () => {
-          const items = document.getElementsByClassName('nav-item')
-          if (items) {
-
-            items.forEach(item => {
-              item.children[0].classList.remove('nuxt-link-exact-active', 'nuxt-link-active')
-            })
-
-            linkItems.forEach(({start, end,  hash}) => {
-              if (window.scrollY > start && window.scrollY < end) {
-                const el = document.querySelector(`[href="${hash}"]`)
-
-                el.classList.add('nuxt-link-exact-active', 'nuxt-link-active')
-              }
-            })
-          }
-        }
-      }
     }
   };
 </script>

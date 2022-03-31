@@ -2,7 +2,7 @@
   <!-- -----------------------------------------------
         Start Footer
   ----------------------------------------------- -->
-  <v-footer id="contacts" class="footer">
+  <v-footer  id="contacts" class="footer">
     <v-container>
       <v-row class="py-0 py-md-15">
         <!-- -----------------------------------------------
@@ -18,7 +18,6 @@
         <v-col cols="12" sm="12" md="12" lg="3" class="px-xs-0">
           <h4 class="font-weight-regular font-18">{{$t('phone')}}</h4>
           <p class="mt-10 mb-0">+380 (68) 629 40 26</p>
-          <p class="mt-4 mb-0">+380 (67) 006 02 06</p>
         </v-col>
         <!-- -----------------------------------------------
         Third Column

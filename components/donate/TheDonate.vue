@@ -1,8 +1,18 @@
 <template>
   <div class="donate">
     <v-container>
+      <v-row justify="center">
+        <v-col cols="12" sm="10" md="9" lg="7">
+          <div class="text-center">
+            <h2 class="ui-title font-weight-bold">{{$t('requisites')}}</h2>
+            <p>
+              {{$t('requisitesDesc')}}
+            </p>
+          </div>
+        </v-col>
+      </v-row>
       <v-row>
-        <v-col v-for="item in banks" cols="12" md="6">
+        <v-col :key="i" v-for="(item, i) in banks" cols="12" md="6">
           <TheDonateItem :data="item"/>
         </v-col>
       </v-row>

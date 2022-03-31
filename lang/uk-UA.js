@@ -44,8 +44,8 @@ export default {
   iban: 'IBAN',
   swift: 'SWIFT',
   bankName: 'Назва банку',
-  correspondentBanks: 'Банки кореспонденти',
-  correspondentBank: 'Банки кореспондент',
+  correspondentBanks: 'Банк кореспонденти',
+  correspondentBank: 'Банк кореспондент',
   account: 'Рахунок',
   copied: 'Скопійовано!',
   org: 'Органцізація',
@@ -55,6 +55,9 @@ export default {
   usd: 'ДОЛАР США',
   eur: 'ЄВРО',
   crypto: 'КРИПТОВАЛЮТА',
-  BTCpay: 'Оплатити BTC',
-  ETHpay: 'Оплатити ETH',
+  BTCpay: 'Пожертвувати BTC',
+  ETHpay: 'Пожертвувати ETH',
+
+  requisites: 'Реквізити',
+  requisitesDesc: 'Перекази з-за кордону SWIFT та Криптовалюта'
 }

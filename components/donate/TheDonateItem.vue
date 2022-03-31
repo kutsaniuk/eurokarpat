@@ -96,7 +96,7 @@
         </div>
       </v-card-text>
     </v-card>
-    <input id="input_copy" type="text">
+    <input id="input_copy" type="text" readonly>
   </div>
 </template>
 
