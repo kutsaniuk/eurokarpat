@@ -19,7 +19,28 @@
       return {
         banks: [
           {
-            title: 'UNITED STATES DOLLAR',
+            title: 'uah',
+            icon: 'ua',
+            bank: {
+              org: 'ГО ЄВРОКАРПАТСЬКА ІНІЦІАТИВА',
+              orgEDRPOY: '44367028',
+              iban: 'UA573366770000026005052564352',
+              bankName: 'АТ КБ "ПРИВАТБАНК"',
+              bankEDRPOY: '14360570'
+            }
+          },
+          {
+            title: 'crypto',
+            icon: ['btc', 'eth'],
+            bank: {
+              BTC: 'bc1qknuqhz4deyupgz7qmxl4vphgs8yp62dpqa8uz8',
+              ETH: '0xcF9640e3d0779451AcaF1656B2C9B29a507306E6',
+              BTCpay: true,
+              ETHpay: true
+            }
+          },
+          {
+            title: 'usd',
             icon: 'us',
             bank: {
               companyName: 'NGO EUROCARPATHIAN INITIATIVE',
@@ -41,7 +62,7 @@
             ]
           },
           {
-            title: 'EURO',
+            title: 'eur',
             icon: 'eu',
             bank: {
               companyName: 'NGO EUROCARPATHIAN INITIATIVE',
@@ -72,7 +93,7 @@
     margin-top: 130px;
 
     @media (max-width: 425px) {
-      margin-top: 70px;
+      margin-top: 90px;
     }
   }
 </style>

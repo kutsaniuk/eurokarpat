@@ -48,4 +48,13 @@ export default {
   correspondentBank: 'Банки кореспондент',
   account: 'Рахунок',
   copied: 'Скопійовано!',
+  org: 'Органцізація',
+  orgEDRPOY: 'ЄДРПОУ органцізації',
+  bankEDRPOY: 'ЄДРПОУ банку',
+  uah: 'УКРАЇНСЬКА ГРИВНЯ',
+  usd: 'ДОЛАР США',
+  eur: 'ЄВРО',
+  crypto: 'КРИПТОВАЛЮТА',
+  BTCpay: 'Оплатити BTC',
+  ETHpay: 'Оплатити ETH',
 }

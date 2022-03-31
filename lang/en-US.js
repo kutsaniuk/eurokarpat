@@ -48,4 +48,13 @@ export default {
   correspondentBank: 'Correspondent bank',
   account: 'Account',
   copied: 'Copied!',
+  org: 'Organization',
+  orgEDRPOY: 'Organization USREOU',
+  bankEDRPOY: 'Bank USREOU',
+  uah: 'UKRAINIAN HRYVNIA',
+  usd: 'UNITED STATES DOLLAR',
+  eur: 'EURO',
+  crypto: 'CRYPTOCURRENCY',
+  BTCpay: 'Pay BTC',
+  ETHpay: 'Pay ETH',
 }

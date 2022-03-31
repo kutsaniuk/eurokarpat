@@ -1,9 +1,18 @@
 <template>
-  <div v-if="data">
-    <v-card>
+  <div class="fill-height" v-if="data">
+    <v-card class="fill-height" min-height="400px">
       <v-card-title class=" justify-space-between">
-        <span class="font-18 primary--text">{{data.title}}</span>
-        <img width="32" :src="require('@/assets/images/lang/' + data.icon + '.svg')" />
+        <span class="font-18 primary--text">{{$t(data.title)}}</span>
+        <div v-if="Array.isArray(data.icon)">
+          <img v-for="icon in data.icon"
+               width="32"
+               class="ml-5"
+               :key="icon"
+               :src="require('@/assets/images/lang/' + icon + '.svg')"/>
+        </div>
+        <div v-else>
+          <img width="32" :src="require('@/assets/images/lang/' + data.icon + '.svg')"/>
+        </div>
       </v-card-title>
       <v-card-text>
         <v-list class="pt-0">
@@ -13,6 +22,7 @@
                          :key="key"
                          :id="key + value + data.title"
                          @click="copy(value, key)"
+                         v-if=" typeof value === 'string'"
                          v-for="(value, key) of data.bank">
               <v-list-item-content>
                 <v-list-item-title>{{$t(key)}}</v-list-item-title>
@@ -26,7 +36,7 @@
                 </v-list-item-action-text>
               </v-list-item-action>
             </v-list-item>
-            <v-list-group>
+            <v-list-group v-if="data.correspondentBanks">
               <template v-slot:activator>
                 <v-list-item-title>{{$t('correspondentBanks')}}</v-list-item-title>
               </template>
@@ -54,6 +64,36 @@
             </v-list-group>
           </v-list-item-group>
         </v-list>
+        <div v-if="data.title === 'crypto'" class="btn-crypto">
+          <v-btn
+            v-if="data.bank.BTCpay"
+            nuxt
+            target="_blank"
+            href="https://link.trustwallet.com/send?asset=c0&address=bc1qknuqhz4deyupgz7qmxl4vphgs8yp62dpqa8uz8"
+            color="default"
+            class="mb-10 d-flex justify-space-between align-center"
+            block
+            elevation="0"
+          >
+            <img width="22" :src="require('@/assets/images/lang/btc.svg')"/>
+            {{$t('BTCpay')}}
+            <img width="100" :src="require('@/assets/images/lang/trust_wallet.svg')"/>
+          </v-btn>
+          <v-btn
+            v-if="data.bank.ETHpay"
+            nuxt
+            target="_blank"
+            href="https://link.trustwallet.com/send?address=0xcF9640e3d0779451AcaF1656B2C9B29a507306E6&asset=c60"
+            color="default"
+            class="d-flex justify-space-between align-center"
+            block
+            elevation="0"
+          >
+            <img width="22" :src="require('@/assets/images/lang/eth.svg')"/>
+            {{$t('ETHpay')}}
+            <img width="100" :src="require('@/assets/images/lang/trust_wallet.svg')"/>
+          </v-btn>
+        </div>
       </v-card-text>
     </v-card>
     <input id="input_copy" type="text">
@@ -86,6 +126,17 @@
 <style lang="scss">
   #input_copy {
     opacity: 0;
+  }
+
+  .v-card {
+    position: relative;
+  }
+
+  .btn-crypto {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
   }
 
   .v-list-item__action {
