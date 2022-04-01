@@ -3,14 +3,12 @@
     <v-main>
       <nuxt />
     </v-main>
-    <v-footer class="footer">
-      <v-container>
-        <div class="footer-bottom-bar">
-          <a href="https://www.upwork.com/freelancers/~01aa0623459a6b59d3" target="_blank" class="d-block text-center mt-16">
-            <img width="140" :src="require('@/assets/images/powered.svg')" alt="">
-          </a>
-        </div>
-      </v-container>
+    <v-footer class="footer justify-center">
+      <div class="text-center">
+        <a href="https://www.upwork.com/freelancers/~01aa0623459a6b59d3" target="_blank" class="d-block text-center mt-16">
+          <img width="140" :src="require('@/assets/images/powered.svg')" alt="">
+        </a>
+      </div>
     </v-footer>
   </v-app>
 </template>

@@ -87,6 +87,11 @@
   };
 </script>
 <style lang="scss" scoped>
+  .mini-spacer {
+    height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+  }
   .lang {
     margin-top: 50px;
 
