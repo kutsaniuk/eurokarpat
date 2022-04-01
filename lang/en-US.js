@@ -29,10 +29,31 @@ export default {
   postDesc1: 'The common work NGO "Eurocarpathian initiative" with NGO "The Union of Volunteer Carpathians" with the assistance of Galyna Karp and Ihora Lukyniv gives results. Humanitarian cargo from the EU has arrived in the Carpathians. Such support is very important for Ukrainian defenders is very important. Together to the victory!',
 
   postTitle2: 'Together we can do a lot. Ukraine will win!',
-  postDesc2: 'The common help from the EU continues to arrive in Carpathian.',
+  postDesc2: 'The common help from the EU continues to arrive in Carpathian',
 
   postTitle3: 'The cargo already had arrived in Kyiv',
   postDesc3: 'NGO “Eurocarpathian initiative” had sent humanitarian aid for the defenders of the capital.',
+
+  postTitle4: 'Together to victory!',
+  postDesc4: 'Volunteers are assisted by local Goodvalley businesses and Ro-Ma Farm',
+
+  postTitle5: 'Sent cargo for the defenders of the capital',
+  postDesc5: 'Sent cargo for the defenders of the capital. We are sincerely grateful for the help of the staff of Broshniv-Osadsky Lyceum, residents of the village of Vilkhivka and Oleksyuk Natalia',
+
+  postTitle6: 'Humanitarian aid from the European Union',
+  postDesc6: 'Humanitarian aid from the European Union continues to arrive in the region, where we distribute it according to requests and send it to the forefront. This time the burden for our defenders was provided by the people of Poland. We thank Oksana Savchuk and Vasyl Rybchak for their help',
+
+  postTitle7: 'Thank you to everyone who joins the army!',
+  postDesc7: '',
+
+  postTitle8: 'Sent the next cargo to the Nikolaev area',
+  postDesc8: 'At the address Vitaly Kim - the chairman of the Nikolaev regional state administration sent the next freight to the Nikolaev area',
+
+  postTitle9: 'Cargo was sent to Prykarpattia',
+  postDesc9: 'The cargo was sent to Prykarpattia by Jürgen Kientz and Michael Dihlmann, who have been doing business in the region for many years',
+
+  postTitle10: 'Received a batch of canned meat',
+  postDesc10: 'We thank Goodvalley and the staff of the Ripa Lyceum for another batch of canned meat for the defenders of Ukraine',
 
   aboutTitle: 'About Us',
   aboutDesc: '<p>NGO "Eurocarpathian initiative" had transformed into a non-governmental organization, which carries out charitable activities.</p>' +
@@ -61,5 +82,7 @@ export default {
   requisites: 'Payment details',
   requisitesDesc: 'Cryptocurrency and SWIFT transfers from abroad',
 
-  fastDonate: 'Fast Donate'
+  fastDonate: 'Fast Donate',
+
+  showMore: 'Show More'
 }
