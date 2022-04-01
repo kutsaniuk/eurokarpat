@@ -84,5 +84,8 @@ export default {
 
   fastDonate: 'Fast Donate',
 
-  showMore: 'Show More'
+  showMore: 'Show More',
+
+  welcome: 'Welcome',
+  signIn: 'Sign In'
 }

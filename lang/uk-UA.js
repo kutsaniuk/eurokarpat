@@ -84,5 +84,8 @@ export default {
 
   fastDonate: 'Швидка Пожертва',
 
-  showMore: 'Більше'
+  showMore: 'Більше',
+
+  welcome: 'Ласкаво просимо',
+  signIn: 'Увійти'
 }

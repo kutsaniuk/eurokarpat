@@ -35,7 +35,9 @@ export default {
     duration: 3000
   },
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    { src: '~/plugins/axios', mode: 'client' }
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -81,6 +83,41 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  axios: {
+    https: true,
+    progress: true,
+    retry: true,
+    proxy: false,
+    baseURL: 'https://api.eurocarpathian.com/'
+  },
+
+  auth: {
+    strategies: {
+      local: {
+        token: {
+          property: 'token',
+          type: 'Bearer',
+          maxAge: 1800
+        },
+        refreshToken: {
+          property: 'refresh_token',
+          maxAge: 60 * 60 * 24 * 30
+        },
+        endpoints: {
+          login: false,
+          logout: false,
+          user: false
+        }
+      }
+    },
+    redirect: {
+      login: false,
+      logout: false,
+      callback: false,
+      home: false
+    }
+  },
 
   target: 'static'
 };
