@@ -50,6 +50,7 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/axios',
     [
       '@nuxtjs/i18n',
       {
@@ -112,7 +113,7 @@ export default {
       }
     },
     redirect: {
-      login: false,
+      login: '/login',
       logout: false,
       callback: false,
       home: false

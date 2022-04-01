@@ -36,8 +36,8 @@
                   <!--                  btn-danger-gradient-->
                   <v-col cols="12" class="text-center">
                     <v-btn
-                      nuxt
-                      to="/"
+                      @click="login"
+                      :loading="loading"
                       class="btn-custom-md"
                       :block="$vuetify.breakpoint.xsOnly"
                       color="primary"
@@ -79,11 +79,27 @@
   export default {
     data() {
       return {
-        password: "",
-        email: "",
+        email: '',
+        password: '',
+        loading: false
       };
     },
-    methods: {},
+    methods: {
+      async login() {
+        this.loading = true
+        try {
+          await this.$store.dispatch('auth/login', {
+            email: this.email,
+            password: this.password
+          })
+
+          this.$router.push('/admin')
+        } catch (e) {
+          console.error(e)
+        }
+        this.loading = false
+      }
+    },
   };
 </script>
 <style lang="scss" scoped>
@@ -92,6 +108,7 @@
     display: flex;
     align-items: center;
   }
+
   .lang {
     margin-top: 50px;
 
