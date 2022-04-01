@@ -59,5 +59,7 @@ export default {
   ETHpay: 'Пожертвувати ETH',
 
   requisites: 'Реквізити',
-  requisitesDesc: 'Перекази з-за кордону SWIFT та Криптовалюта'
+  requisitesDesc: 'Перекази з-за кордону SWIFT та Криптовалюта',
+
+  fastDonate: 'Швидка Пожертва',
 }

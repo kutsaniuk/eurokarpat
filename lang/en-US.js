@@ -59,5 +59,7 @@ export default {
   ETHpay: 'Donate ETH',
 
   requisites: 'Payment details',
-  requisitesDesc: 'Cryptocurrency and SWIFT transfers from abroad'
+  requisitesDesc: 'Cryptocurrency and SWIFT transfers from abroad',
+
+  fastDonate: 'Fast Donate'
 }

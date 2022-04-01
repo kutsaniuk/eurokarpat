@@ -1,10 +1,25 @@
 <template>
   <div class="donate">
     <v-container>
+      <v-row>
+        <v-col cols="12" align="center">
+          <v-btn
+            class="font-weight-bold text-uppercase my-16"
+            href="https://eci.diaka.ua/eci-eng"
+            x-large
+            color="primary"
+            elevation="0"
+          >
+            {{$t('fastDonate')}}
+          </v-btn>
+
+        </v-col>
+      </v-row>
       <v-row justify="center">
         <v-col cols="12">
           <div class="text-center">
-            <h2 class="ui-title font-weight-bold">{{$t('requisites')}}</h2>
+            <v-divider class="d-inline-block" :style="{width: '50%'}"></v-divider>
+            <h2 class="ui-title mt-16 font-weight-bold">{{$t('requisites')}}</h2>
             <p>
               {{$t('requisitesDesc')}}
             </p>
