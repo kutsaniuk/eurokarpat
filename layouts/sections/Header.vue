@@ -43,16 +43,16 @@
               <li class="nav-item" text>
                 <a class="nav-link" href="#contacts" @click.prevent="goTo">{{$t('contacts')}}</a>
               </li>
-              <li class="nav-item" text>
+              <!--<li class="nav-item" text>
                 <NLink class="nav-link" nuxt to="/requisites">{{$t('requisites')}}</NLink>
-              </li>
+              </li>-->
               <li class="nav-item" text>
                 <v-divider class="nav-item-divider"></v-divider>
                 <div class="nav-link">
                   <v-btn
                     class="btn-custom-nm"
                     nuxt
-                    href="https://eci.diaka.ua/eci-eng"
+                    to="/requisites"
                     color="primary"
                     block
                     elevation="0"

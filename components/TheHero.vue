@@ -12,7 +12,7 @@
               <v-btn
                 class="btn-custom-nm d-inline-flex d-lg-none cta font-weight-bold"
                 nuxt
-                href="https://eci.diaka.ua/eci-eng"
+                to="/requisites"
                 x-large
                 color="primary"
                 elevation="0"

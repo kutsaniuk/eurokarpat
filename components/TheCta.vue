@@ -13,7 +13,7 @@
             <v-btn
               nuxt
               large
-              href="https://eci.diaka.ua/eci-eng"
+              to="/requisites"
               class="btn-custom-md text-uppercase"
               outlined
               color="white"

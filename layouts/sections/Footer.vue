@@ -57,6 +57,9 @@
 <!--            </div>-->
 <!--          </div>-->
         </div>
+        <a href="https://www.upwork.com/freelancers/~01aa0623459a6b59d3" target="_blank" class="d-block text-center mt-16">
+          <img width="140" :src="require('@/assets/images/powered.svg')" alt="">
+        </a>
       </div>
     </v-container>
   </v-footer>
