@@ -4,7 +4,7 @@
       <v-row>
         <v-col cols="12" align="center">
           <v-btn
-            class="font-weight-bold text-uppercase my-16"
+            class="font-weight-bold cta my-16"
             href="https://eci.diaka.ua/eci-eng"
             x-large
             color="primary"
@@ -120,5 +120,10 @@
     @media (max-width: 425px) {
       margin-top: 90px;
     }
+  }
+
+  .cta {
+    box-shadow: 0 0 0 5px rgb(61 89 166 / 40%) !important;
+    text-transform: uppercase;
   }
 </style>
