@@ -17,6 +17,7 @@
                     <v-text-field
                       label="Email"
                       outlined
+                      name="email"
                       type="email"
                       v-model="email"
                       placeholder="Email"
@@ -26,6 +27,7 @@
                     <v-text-field
                       label="Password"
                       type="password"
+                      name="password"
                       outlined
                       v-model="password"
                       placeholder="Password"
@@ -88,21 +90,23 @@
       async login() {
         this.loading = true
         try {
-          const { accessToken } = await this.$store.dispatch('auth/login', {
+          const res = await this.$store.dispatch('auth/login', {
             email: this.email,
             password: this.password
           })
 
-          this.$auth.reset()
-          this.$auth.strategy.token.reset()
+          console.log(res)
 
-          await this.$auth.strategy.token.set(accessToken)
-          await this.$auth.strategy.token.sync()
-          await this.$auth.setUserToken(
-            accessToken
-          )
+          // this.$auth.reset()
+          // this.$auth.strategy.token.reset()
+          //
+          // await this.$auth.strategy.token.set(accessToken)
+          // await this.$auth.strategy.token.sync()
+          // await this.$auth.setUserToken(
+          //   accessToken
+          // )
 
-          this.$router.push('/admin')
+          // this.$router.push('/admin')
         } catch (e) {
           console.error(e)
         }
