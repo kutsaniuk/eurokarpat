@@ -12,9 +12,17 @@ export const getters = {
 export const actions = {
   async login({commit}, data) {
     return this.$axios.$post('/auth/login', data)
-      .then(async (res) => {
-        commit('setUser', res.user);
-        return res
+      .then(async ({user, accessToken}) => {
+        this.$auth.reset()
+        this.$auth.strategy.token.reset()
+
+        await this.$auth.strategy.token.set(accessToken)
+        await this.$auth.strategy.token.sync()
+        await this.$auth.setUserToken(
+          accessToken
+        )
+
+        commit('setUser', user);
       })
   },
 }
