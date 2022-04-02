@@ -29,7 +29,7 @@ const handler = async (req, res) => {
     }
   } catch (error) {
     console.log(error)
-    return res.status(500).json({ type: 'error', message: error.message });
+    return res.status(error.status).json({ type: 'error', message: error.data.message });
   }
 }
 
