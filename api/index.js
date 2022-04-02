@@ -19,7 +19,7 @@ const allowCors = fn => async (req, res) => {
 
 const handler = async (req, res) => {
   try {
-    console.log(req.body, res)
+    console.log(JSON.stringify(req.body), res)
     const response = await axios.post('https://api.eurocarpathian.com/auth/login', req.body);
     console.log(response)
     if (response.status !== 200) {
