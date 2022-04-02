@@ -11,7 +11,6 @@ export const getters = {
 // actions
 export const actions = {
   async login({commit}, data) {
-    this.$axios.$get('/')
     return this.$axios.$post('/auth/login', data)
       .then(async ({user, accessToken}) => {
         this.$auth.reset()
