@@ -11,7 +11,7 @@ export const getters = {
 // actions
 export const actions = {
   async getPosts({commit}) {
-    return this.$axios.$get('/posts')
+    return this.$axios.$get('/posts/asdw434534refdvsd')
       .then(async (posts) => {
         commit('setPosts', posts);
       })
