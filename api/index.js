@@ -1,3 +1,5 @@
+const axios = require('axios');
+
 const allowCors = fn => async (req, res) => {
   res.setHeader('Access-Control-Allow-Credentials', true)
   res.setHeader('Access-Control-Allow-Origin', '*')
@@ -15,9 +17,20 @@ const allowCors = fn => async (req, res) => {
   return await fn(req, res)
 }
 
-const handler = (req, res) => {
-  const d = new Date()
-  res.end(d.toString())
+const handler = async (req, res) => {
+  try {
+    console.log(req, res)
+    const response = await axios.get('https://api.eurocarpathian.com/auth/login');
+    console.log(response)
+    if (response.status !== 200) {
+      return res.status(response.status).json({ type: 'error', message: response.statusText });
+    } else {
+      res.json(response.data);
+    }
+  } catch (error) {
+    console.log(error)
+    return res.status(500).json({ type: 'error', message: error.message });
+  }
 }
 
 module.exports = allowCors(handler)

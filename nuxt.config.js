@@ -90,7 +90,7 @@ export default {
     progress: true,
     retry: true,
     proxy: false,
-    baseURL: 'https://api.eurocarpathian.com/'
+    baseURL: '/api/'
   },
 
   auth: {
