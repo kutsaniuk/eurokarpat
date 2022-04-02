@@ -19,7 +19,7 @@ export const allowCors = fn => async (req, res) => {
 
 export const handler = async (req, res) => {
   try {
-    const response = await axios.post('https://api.eurocarpathian.com' + req.path, req.body);
+    const response = await axios.post('https://api.eurocarpathian.com' + req.path.replace('/api', ''), req.body);
     if (response.status !== 200) {
       return res.status(response.status).json({ type: 'error', message: response.statusText });
     } else {
