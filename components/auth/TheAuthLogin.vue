@@ -90,23 +90,21 @@
       async login() {
         this.loading = true
         try {
-          const res = await this.$store.dispatch('auth/login', {
+          const {accessToken} = await this.$store.dispatch('auth/login', {
             email: this.email,
             password: this.password
           })
 
-          console.log(res)
+          this.$auth.reset()
+          this.$auth.strategy.token.reset()
 
-          // this.$auth.reset()
-          // this.$auth.strategy.token.reset()
-          //
-          // await this.$auth.strategy.token.set(accessToken)
-          // await this.$auth.strategy.token.sync()
-          // await this.$auth.setUserToken(
-          //   accessToken
-          // )
+          await this.$auth.strategy.token.set(accessToken)
+          await this.$auth.strategy.token.sync()
+          await this.$auth.setUserToken(
+            accessToken
+          )
 
-          // this.$router.push('/admin')
+          this.$router.push('/admin')
         } catch (e) {
           console.error(e)
         }
