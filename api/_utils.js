@@ -26,8 +26,8 @@ export const handler = async (req, res) => {
       res.json(response.data);
     }
   } catch (error) {
-    console.log(error)
-    return res.status(error.response.status).json({ type: 'error', message: error.response.data.message });
+    return res.json(req);
+    // return res.status(error.response.status).json({ type: 'error', message: error.response.data.message });
   }
 }
 
