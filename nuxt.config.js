@@ -91,7 +91,7 @@ export default {
     progress: true,
     retry: true,
     proxy: false,
-    baseURL: '/api/'
+    baseURL: 'https://eurokarpat.herokuapp.com/'
   },
 
   auth: {
