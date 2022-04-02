@@ -25,6 +25,11 @@ export const handler = async (req, res) => {
     let url = req.url
     url = api + url.substring(0, url.indexOf('?')).replace('/api', '')
 
+    const AUTH_TOKEN = req.get('Authorization')
+    if (AUTH_TOKEN) {
+      axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
+    }
+
     let response
 
     switch (req.method) {
