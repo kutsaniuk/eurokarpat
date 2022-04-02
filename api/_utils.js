@@ -18,15 +18,20 @@ export const allowCors = fn => async (req, res) => {
 }
 
 export const handler = async (req, res) => {
+  let url = req.url
+  url = url.substring(0, url.indexOf('?')).replace('/api', '')
+
   try {
-    const response = await axios.post('https://api.eurocarpathian.com' + req.path.replace('/api', ''), req.body);
+
+
+    const response = await axios.post('https://api.eurocarpathian.com' + url, req.body);
     if (response.status !== 200) {
       return res.status(response.status).json({ type: 'error', message: response.statusText });
     } else {
       res.json(response.data);
     }
   } catch (error) {
-    return res.json({s: req.originalUrl, q: req.url, ss: res.path});
+    return res.json({url});
     // return res.status(error.response.status).json({ type: 'error', message: error.response.data.message });
   }
 }
