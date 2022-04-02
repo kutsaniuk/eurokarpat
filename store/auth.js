@@ -11,7 +11,7 @@ export const getters = {
 // actions
 export const actions = {
   async login({commit}, data) {
-    return  this.$axios.$post('/auth/login', data)
+    return  this.$axios.$post('/', data)
       .then(async (res) => {
         this.$auth.reset()
         this.$auth.strategy.token.reset()
