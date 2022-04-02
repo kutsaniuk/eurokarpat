@@ -13,6 +13,7 @@ export const actions = {
   async login({commit}, data) {
     return this.$axios.$post('/auth/login', data)
       .then(async (res) => {
+        console.log(res)
         commit('setUser', res.data.user);
       })
   },
