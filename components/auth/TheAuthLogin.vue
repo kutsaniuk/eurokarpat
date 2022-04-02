@@ -88,7 +88,7 @@
       async login() {
         this.loading = true
         try {
-          const { data } = await this.$store.dispatch('auth/login', {
+          const { accessToken } = await this.$store.dispatch('auth/login', {
             email: this.email,
             password: this.password
           })
@@ -96,10 +96,10 @@
           this.$auth.reset()
           this.$auth.strategy.token.reset()
 
-          await this.$auth.strategy.token.set(data.accessToken)
+          await this.$auth.strategy.token.set(accessToken)
           await this.$auth.strategy.token.sync()
           await this.$auth.setUserToken(
-            data.accessToken
+            accessToken
           )
 
           this.$router.push('/admin')
