@@ -20,7 +20,7 @@ export const actions = {
 
 // mutations
 export const mutations = {
-  setPosts: (state, user) => {
-    state.posts = posts
+  setPosts: (state, payload) => {
+    state.posts = payload
   }
 }
