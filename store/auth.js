@@ -14,6 +14,7 @@ export const actions = {
     return this.$axios.$post('/auth/login', data)
       .then(async (res) => {
         commit('setUser', res.user);
+        return res
       })
   },
 }
