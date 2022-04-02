@@ -21,7 +21,7 @@ const handler = async (req, res) => {
   console.log('req', req.query.name)
   console.log(req)
   try {
-    const response = await axios.post('https://api.eurocarpathian.com/auth/login', req.body);
+    const response = await axios.post('https://api.eurocarpathian.com/auth/' + req.query.name, req.body);
     if (response.status !== 200) {
       return res.status(response.status).json({ type: 'error', message: response.statusText });
     } else {
