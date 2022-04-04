@@ -1,19 +1,12 @@
 <template>
-  <div>
-    <TheAdminPosts/>
-  </div>
+  <div></div>
 </template>
 
 <script>
-  export default {
-    layout: 'admin',
-    components: {
-      TheAdminPosts: () => import("@/components/admin/TheAdminPosts.vue")
-    }
-  };
+export default {
+  layout: "admin",
+  mounted() {
+    this.$router.push('/admin/posts')
+  }
+};
 </script>
-
-
-<style scoped>
-
-</style>

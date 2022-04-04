@@ -1,26 +1,24 @@
 <template>
-  <div>
-    <div class="mini-spacer">
       <v-container>
-        <!-- -----------------------------------------------
-            Start Contact Form
-        ----------------------------------------------- -->
-        <v-row justify="center">
+        <v-row v-if="loading">
+          <v-col cols="4" v-for="i in 9">
+            <v-skeleton-loader
+              :key="i"
+              class="mx-auto"
+              max-width="300"
+              type="card"
+            ></v-skeleton-loader>
+          </v-col>
+        </v-row>
+        <v-row v-else justify="center">
           {{posts}}
         </v-row>
-        <!-- -----------------------------------------------
-            End Contact Form
-        ----------------------------------------------- -->
       </v-container>
-    </div>
-  </div>
 </template>
 <script>
   export default {
     data() {
       return {
-        email: '',
-        password: '',
         loading: false
       };
     },

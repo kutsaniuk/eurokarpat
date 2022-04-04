@@ -52,6 +52,7 @@ export default {
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/auth-next',
+    ['cookie-universal-nuxt', { alias: 'cookie' }],
     [
       '@nuxtjs/i18n',
       {
@@ -110,7 +111,11 @@ export default {
           login: false,
           logout: false,
           user: false
-        }
+        },
+        user: {
+          property: 'user', // <--- Default "user"
+          autoFetch: true
+        },
       }
     },
     redirect: {

@@ -86,16 +86,19 @@
         loading: false
       };
     },
+    created() {
+      this.$store.dispatch('logout')
+    },
     methods: {
       async login() {
         this.loading = true
         try {
-          await this.$store.dispatch('auth/login', {
+          await this.$store.dispatch('login', {
             email: this.email,
             password: this.password
           })
 
-          this.$router.push('/admin')
+          this.$router.push('/admin/posts')
         } catch (e) {
           console.error(e)
         }
