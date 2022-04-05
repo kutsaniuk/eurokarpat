@@ -87,5 +87,46 @@ export default {
   showMore: 'Show More',
 
   welcome: 'Welcome',
-  signIn: 'Sign In'
+  signIn: 'Sign In',
+
+  posts: 'Posts',
+  users: 'Users',
+  profile: 'Profile',
+  logout: 'Logout',
+
+  myProfile: 'My Profile',
+  changeName: 'Change Name',
+  fullName: 'Full Name',
+  save: 'Save',
+  changePassword: 'Change Password',
+  newPassword: 'New Password',
+  confirmPassword: 'Confirm Password',
+
+  title: 'Title',
+  description: 'Description',
+  created: 'Created',
+  published: 'Published',
+  actions: 'Actions',
+
+  noPosts: 'No Posts',
+
+  create: 'Create',
+  cancel: 'Cancel',
+  change: 'Change',
+  remove: 'Remove',
+  publish: 'Publish',
+  error: 'Error',
+  edited: 'Edited',
+  added: 'Added',
+
+  editPost: 'Edit Post',
+  newPost: 'New Post',
+
+  addImage: 'Add Image',
+
+  imageRequired: 'Image is required',
+  titleRequired: 'Title is required',
+  imageMaxSize: 'Maximum',
+  imageSizeError: 'Photos will not be more than '
+
 }

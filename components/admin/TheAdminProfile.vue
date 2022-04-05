@@ -2,7 +2,7 @@
   <v-container fluid>
     <v-row>
       <v-col cols="12">
-        <h2 class="d-flex align-center">My Profile
+        <h2 class="d-flex align-center">{{$t('myProfile')}}
           <v-progress-circular
             :size="24"
             v-if="loading"
@@ -23,7 +23,7 @@
           type="card"
         ></v-skeleton-loader>
         <v-card v-else>
-          <v-card-title>Change Name</v-card-title>
+          <v-card-title>{{$t('changeName')}}</v-card-title>
           <v-card-text>
             <form>
               <v-row>
@@ -43,22 +43,21 @@
                 </v-col>
                 <v-col cols="9" class="py-0">
                   <v-text-field
-                    label="Email"
+                    :label="$t('email')"
                     outlined
                     name="email"
                     type="text"
                     v-model="profile.email"
-                    placeholder="Email"
                     readonly
                   ></v-text-field>
                   <v-text-field
-                    label="fullName"
+                    :label="$t('fullName')"
                     outlined
-                    name="email"
-                    @keyup="$store.dispatch('setAvatarName', profile.fullName)"
+                    name="fullName"
+                    @keyup="$store.dispatch('user/setAvatarName', profile.fullName)"
                     type="text"
                     v-model="profile.fullName"
-                    placeholder="fullName"
+                    :placeholder="$t('fullName')"
                   ></v-text-field>
                 </v-col>
               </v-row>
@@ -72,7 +71,7 @@
               color="primary"
               elevation="0"
             >
-              save
+              {{$t('save')}}
             </v-btn>
           </v-card-actions>
         </v-card>
@@ -85,29 +84,29 @@
           type="card"
         ></v-skeleton-loader>
         <v-card v-else>
-          <v-card-title>Change Password</v-card-title>
+          <v-card-title>{{$t('changePassword')}}</v-card-title>
           <v-card-text>
             <form>
               <v-row class="mt-15">
                 <v-col cols="12" class="py-0">
                   <v-text-field
-                    label="New Password"
+                    :label="$t('newPassword')"
                     outlined
                     name="email"
                     type="text"
                     v-model="profile.email"
-                    placeholder="Email"
+                    :placeholder="$t('newPassword')"
                     readonly
                   ></v-text-field>
                 </v-col>
                 <v-col cols="12" class="py-0">
                   <v-text-field
-                    label="Confirm Password"
+                    :label="$t('confirmPassword')"
                     outlined
                     name="email"
                     type="text"
                     v-model="profile.fullName"
-                    placeholder="fullName"
+                    :placeholder="$t('confirmPassword')"
                   ></v-text-field>
                 </v-col>
               </v-row>
@@ -121,7 +120,7 @@
               color="primary"
               elevation="0"
             >
-              save
+              {{$t('save')}}
             </v-btn>
           </v-card-actions>
         </v-card>
@@ -142,7 +141,7 @@
     },
     methods: {
       async getProfile() {
-        this.$store.dispatch('setAvatarName', this.user.fullName)
+        this.$store.dispatch('user/setAvatarName', this.user.fullName)
 
         this.loading = true
         try {
@@ -158,7 +157,7 @@
         return this.$cookie.get('user')
       },
       avatarName() {
-        return this.$store.state.avatarName
+        return this.$store.state.user.avatarName
       }
     }
   };

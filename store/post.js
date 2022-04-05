@@ -16,6 +16,20 @@ export const actions = {
         commit('setPosts', posts);
       })
   },
+  async getPost({commit}, id) {
+    return this.$axios.$get('/posts/' + id)
+  },
+  async createPost({commit}, post) {
+    return this.$axios.$post('/posts', post)
+  },
+  async savePost({commit}, post) {
+    return this.$axios.$put('/posts/' + post.id, post)
+  },
+  async uploadImagePost({commit}, image) {
+    const formData = new FormData()
+    formData.append('image', image)
+    return this.$axios.$post('/images/upload', formData)
+  },
 }
 
 // mutations

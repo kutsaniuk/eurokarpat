@@ -87,5 +87,45 @@ export default {
   showMore: 'Більше',
 
   welcome: 'Ласкаво просимо',
-  signIn: 'Увійти'
+  signIn: 'Увійти',
+
+  posts: 'Новини',
+  users: 'Користувачі',
+  profile: 'Профіль',
+  logout: 'Вийти',
+
+  myProfile: 'Мій Профіль',
+  changeName: "Змінити ім'я",
+  fullName: "Повне Ім'я",
+  save: 'Зберегти',
+  changePassword: 'Змінити Пароль',
+  newPassword: 'Новий Пароль',
+  confirmPassword: 'Підтвертити Пароль',
+
+  title: 'Заголовок',
+  description: 'Опис',
+  created: 'Дата Створення',
+  published: 'Опубліковано',
+  actions: 'Дії',
+
+  noPosts: 'Новин немає',
+
+  create: 'Створити',
+  cancel: 'Скасувати',
+  change: 'Змінити',
+  remove: 'Видалити',
+  publish: 'Опублікувати',
+  error: 'Помилка',
+  edited: 'Редаговано',
+  added: 'Добавлено',
+
+  editPost: 'Редагувати Пост',
+  newPost: 'Новий Пост',
+
+  addImage: 'Добавити Фото',
+
+  imageRequired: "Фото є обов'язковим",
+  titleRequired: "Заголовок не може бути пустим",
+  imageMaxSize: 'Максимум',
+  imageSizeError: 'Фото немає бути більше ніж ',
 }

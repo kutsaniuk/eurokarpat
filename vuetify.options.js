@@ -5,20 +5,20 @@ export default {
       dark: {
         primary: "#3d5aa6",
         accent: "#3d5aa6",
-        secondary: "#a73aeb",
+        secondary: "#f5f5f5",
         info: "#0164d3",
         warning: "#fec500",
         error: "#C96D85",
-        success: "#2cdd9b"
+        success: "#5aa63d"
       },
       light: {
         primary: "#3d5aa6",
         accent: "#3d5aa6",
-        secondary: "#a73aeb",
+        secondary: "#f5f5f5",
         info: "#0164d3",
         warning: "#fec500",
         error: "#C96D85",
-        success: "#2cdd9b"
+        success: "#5aa63d"
       }
     }
   }

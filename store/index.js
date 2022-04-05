@@ -1,7 +1,5 @@
 // initial state
-export const state = () => ({
-  avatarName: 'AA'
-})
+export const state = () => ({})
 
 // getters
 export const getters = {};
@@ -20,7 +18,7 @@ export const actions = {
           accessToken
         )
 
-        dispatch('setAvatarName', user.fullName)
+        dispatch('user/setAvatarName', user.fullName)
         getUserAvatarColor(user)
 
         this.$cookie.set('user', user)
@@ -30,29 +28,11 @@ export const actions = {
     this.$auth.reset()
     this.$auth.strategy.token.reset()
     this.$cookie.remove('user')
-  },
-  setAvatarName({commit}, fullName) {
-    const letters = []
-
-    if (fullName) {
-      fullName.split(' ')
-        .forEach(i => {
-          if (i) {
-            letters.push(i.charAt(0).toLocaleUpperCase())
-          }
-        })
-      console.log(letters)
-      commit('setAvatarName', letters.slice(0, 2).join(''))
-    }
   }
 }
 
 // mutations
-export const mutations = {
-  setAvatarName: (state, payload) => {
-    state.avatarName = payload
-  }
-}
+export const mutations = {}
 
 
 function getUserAvatarColor(user) {

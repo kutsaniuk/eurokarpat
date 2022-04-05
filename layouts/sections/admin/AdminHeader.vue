@@ -46,7 +46,7 @@
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title>{{ text }}</v-list-item-title>
+            <v-list-item-title>{{ $t(text) }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -61,22 +61,22 @@
         drawer: true,
         mini: false,
         items: [
-          ['mdi-text-box-multiple-outline', 'Posts', '/admin/posts'],
-          ['mdi-account-supervisor', 'Users', '/admin/users'],
-          ['mdi-account', 'Profile', '/admin/me'],
-          ['mdi-logout', 'Logout', '/login'],
+          ['mdi-text-box-multiple-outline', 'posts', '/admin/posts'],
+          // ['mdi-account-supervisor', 'users', '/admin/users'],
+          // ['mdi-account', 'profile', '/admin/me'],
+          ['mdi-logout', 'logout', '/login'],
         ],
       }
     },
     mounted() {
-      this.$store.dispatch('setAvatarName', this.user.fullName)
+      this.$store.dispatch('user/setAvatarName', this.user.fullName)
     },
     computed: {
       user() {
         return this.$cookie.get('user')
       },
       avatarName() {
-        return this.$store.state.avatarName
+        return this.$store.state.user.avatarName
       }
     }
   }

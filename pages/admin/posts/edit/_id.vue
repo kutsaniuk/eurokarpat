@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TheAdminPosts/>
+    <TheAdminPostsAddEdit/>
   </div>
 </template>
 
@@ -8,7 +8,7 @@
   export default {
     layout: 'admin',
     components: {
-      TheAdminPosts: () => import("@/components/admin/TheAdminPosts.vue")
+      TheAdminPostsAddEdit: () => import("@/components/admin/posts/TheAdminPostsAddEdit.vue")
     }
   };
 </script>

@@ -36,7 +36,8 @@ export default {
   },
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '~/plugins/axios', mode: 'client' }
+    { src: '~/plugins/axios', mode: 'client' },
+    { src: '~/plugins/editor', mode: 'client', ssr: false }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -52,6 +53,7 @@ export default {
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/auth-next',
+    'vue-sweetalert2/nuxt',
     ['cookie-universal-nuxt', { alias: 'cookie' }],
     [
       '@nuxtjs/i18n',
@@ -85,14 +87,16 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    transpile: ['vuetify/lib', 'tiptap-vuetify']
+  },
 
   axios: {
     https: true,
     progress: true,
     retry: true,
     proxy: false,
-    baseURL: 'https://eurokarpat.herokuapp.com/'
+    baseURL: 'https://eurokarpat.herokuapp.com'
   },
 
   auth: {
@@ -124,6 +128,11 @@ export default {
       callback: false,
       home: false
     }
+  },
+
+  sweetalert: {
+    confirmButtonColor: '#3d5aa6',
+    cancelButtonColor: '#C96D85'
   },
 
   target: 'static'
