@@ -15,13 +15,15 @@
               </v-btn>
               <span class="d-flex flex-fill align-center justify-space-between" v-if="isEdit">
                 <span class="mr-10">{{$i18n.locale === 'en' ? post.titleEN : post.title }}</span>
-                <v-chip v-if="post.published" color="accent">
-                  <v-icon class="mr-5">mdi-earth</v-icon>
-                  {{$t('published')}}
-                </v-chip>
-                <v-chip v-else>
-                  {{$t('notPublished')}}
-                </v-chip>
+                <template v-if="$vuetify.breakpoint.smAndUp">
+                  <v-chip v-if="post.published" color="accent">
+                    <v-icon class="mr-5">mdi-earth</v-icon>
+                    {{$t('published')}}
+                  </v-chip>
+                  <v-chip v-else>
+                    {{$t('notPublished')}}
+                  </v-chip>
+                </template>
                </span>
               <span v-else>{{$t('newPost')}}</span>
             </template>
@@ -34,6 +36,15 @@
               class="ml-10"
             ></v-progress-circular>
           </h2>
+        </div>
+        <div class="text-right mt-5" v-if="isEdit && $vuetify.breakpoint.xsOnly">
+          <v-chip v-if="post.published" color="accent">
+            <v-icon class="mr-5">mdi-earth</v-icon>
+            {{$t('published')}}
+          </v-chip>
+          <v-chip v-else>
+            {{$t('notPublished')}}
+          </v-chip>
         </div>
       </v-col>
     </v-row>
@@ -51,7 +62,7 @@
             v-model="valid"
           >
             <v-row no-gutters>
-              <v-col cols="8">
+              <v-col cols="12" lg="8">
                 <v-card-title>
                   <img :width="24" src="@/assets/images/lang/ua.svg" alt="">
                   <span class="ml-5">Українська</span>
@@ -59,7 +70,7 @@
                 <v-card-text>
                   <form>
                     <v-row>
-                      <v-col cols="8">
+                      <v-col cols="12" md="8">
                         <v-text-field
                           :label="$t('title')"
                           outlined
@@ -71,7 +82,7 @@
                           :placeholder="$t('title')"
                         ></v-text-field>
                       </v-col>
-                      <v-col cols="4">
+                      <v-col cols="12" md="4">
                         <v-menu
                           ref="menu"
                           v-model="menuDate"
@@ -145,8 +156,8 @@
                   </form>
                 </v-card-text>
               </v-col>
-              <v-divider vertical></v-divider>
-              <v-col cols="4">
+              <v-divider vertical v-if="$vuetify.breakpoint.lgAndUp"></v-divider>
+              <v-col cols="12" lg="4">
                 <div class="d-flex pa-10 align-center justify-center">
                   <div class="text-center">
                     <img
@@ -258,7 +269,7 @@
             </v-row>
           </v-form>
           <v-divider></v-divider>
-          <v-card-actions class="justify-space-between">
+          <v-card-actions class="d-block d-sm-flex justify-space-between">
             <v-checkbox
               v-model="post.published"
               :label="$t('publish')"
@@ -275,7 +286,7 @@
               </v-btn>
               <v-btn
                 :loading="savePostLoading"
-                class="btn-custom-md ml-5"
+                class="btn-custom-md ml-sm-5 mt-5 mt-sm-0"
                 :block="$vuetify.breakpoint.xsOnly"
                 @click="savePost"
                 color="success"

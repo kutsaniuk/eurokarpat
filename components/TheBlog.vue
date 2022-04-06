@@ -16,12 +16,12 @@
                 <v-icon>mdi-close</v-icon>
               </v-btn>
             </v-toolbar>
-            <video controls width="100%">
+            <video controls v-if="postDialog.videoId" width="100%">
               <source :src="`${$axios.defaults.baseURL}/videos/${postDialog.videoId}`"
                       type="video/mp4">
               Sorry, your browser doesn't support embedded videos.
             </video>
-            <v-card-text class="pt-5" v-html="getDescription(postDialog, true)">
+            <v-card-text class="pt-10" v-html="getDescription(postDialog, true)">
             </v-card-text>
           </v-card>
         </v-dialog>
