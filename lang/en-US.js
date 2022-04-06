@@ -101,11 +101,13 @@ export default {
   changePassword: 'Change Password',
   newPassword: 'New Password',
   confirmPassword: 'Confirm Password',
+  password: 'Password',
 
   title: 'Title',
   description: 'Description',
   created: 'Created',
   published: 'Published',
+  notPublished: 'Not Published',
   actions: 'Actions',
 
   noPosts: 'No Posts',
@@ -113,20 +115,24 @@ export default {
   create: 'Create',
   cancel: 'Cancel',
   change: 'Change',
-  remove: 'Remove',
+  remove: 'Delete',
+  removeWarning: 'Are you sure you want to delete this post?',
   publish: 'Publish',
   error: 'Error',
   edited: 'Edited',
   added: 'Added',
+  loading: 'Loading...',
+  status: 'Status',
+  translate: 'Translate',
 
   editPost: 'Edit Post',
   newPost: 'New Post',
 
   addImage: 'Add Image',
+  addVideo: 'Add Video',
 
   imageRequired: 'Image is required',
   titleRequired: 'Title is required',
   imageMaxSize: 'Maximum',
-  imageSizeError: 'Photos will not be more than '
-
+  fileSizeError: 'File will not be more than ',
 }

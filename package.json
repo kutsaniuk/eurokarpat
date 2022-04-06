@@ -14,11 +14,13 @@
     "@nuxtjs/auth-next": "5.0.0-1611574754.9020f2a",
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/i18n": "^7.2.0",
+    "@nuxtjs/moment": "^1.6.1",
     "axios": "^0.26.1",
     "cookie-universal-nuxt": "^2.1.5",
     "core-js": "^3.15.1",
     "nuxt": "^2.15.7",
     "tiptap-vuetify": "^2.24.0",
+    "truncate-html": "^1.0.4",
     "vue-sweetalert2": "^5.0.2",
     "vuelidate": "^0.7.6",
     "vuetify": "^2.5.5"

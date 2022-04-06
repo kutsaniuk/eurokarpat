@@ -15,27 +15,26 @@
                 <v-row class="mt-15">
                   <v-col cols="12" class="py-0">
                     <v-text-field
-                      label="Email"
+                      :label="$t('email')"
                       outlined
                       name="email"
                       type="email"
                       v-model="email"
-                      placeholder="Email"
+                      placeholder="example@domain.com"
                     ></v-text-field>
                   </v-col>
                   <v-col cols="12" class="py-0">
                     <v-text-field
-                      label="Password"
+                      :label="$t('password')"
                       type="password"
                       name="password"
                       outlined
                       v-model="password"
-                      placeholder="Password"
+                      :placeholder="$t('password')"
                     ></v-text-field>
                   </v-col>
                 </v-row>
                 <v-row class="mt-0">
-                  <!--                  btn-danger-gradient-->
                   <v-col cols="12" class="text-center">
                     <v-btn
                       @click="login"

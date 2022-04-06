@@ -3,16 +3,28 @@
     <v-row>
       <v-col cols="12">
         <div class="d-flex">
-          <h2 class="d-flex align-center">
-            <v-btn
-              @click="cancel"
-              color="primary"
-              class="mr-5"
-              icon
-            >
-              <v-icon>mdi-arrow-left</v-icon>
-            </v-btn>
-            <span>{{isEdit ? $t('editPost') : $t('newPost')}}</span>
+          <h2 class="d-flex flex-fill align-center">
+            <template v-if="!loading">
+              <v-btn
+                @click="cancel"
+                color="primary"
+                class="mr-5"
+                icon
+              >
+                <v-icon>mdi-arrow-left</v-icon>
+              </v-btn>
+              <span class="d-flex flex-fill align-center justify-space-between" v-if="isEdit">
+                <span class="mr-10">{{$i18n.locale === 'en' ? post.titleEN : post.title }}</span>
+                <v-chip v-if="post.published" color="accent">
+                  <v-icon class="mr-5">mdi-earth</v-icon>
+                  {{$t('published')}}
+                </v-chip>
+                <v-chip v-else>
+                  {{$t('notPublished')}}
+                </v-chip>
+               </span>
+              <span v-else>{{$t('newPost')}}</span>
+            </template>
             <v-progress-circular
               :size="24"
               v-if="loading"
@@ -63,9 +75,21 @@
                   </form>
                 </v-card-text>
                 <v-divider class=""></v-divider>
-                <v-card-title>
-                  <img :width="24" src="@/assets/images/lang/us.svg" alt="">
-                  <span class="ml-5">English</span>
+                <v-card-title class="justify-space-between">
+                  <div class="d-flex align-center">
+                    <img :width="24" src="@/assets/images/lang/us.svg" alt="">
+                    <span class="ml-5">English</span>
+                  </div>
+                  <v-btn class="btn-custom-md"
+                         color="primary"
+                         elevation="0"
+                         small
+                         v-if="post.title"
+                         :loading="translateLoading"
+                         @click="translate">
+                    <v-icon class="mr-5">mdi-google-translate</v-icon>
+                    {{$t('translate')}}
+                  </v-btn>
                 </v-card-title>
                 <v-card-text>
                   <form>
@@ -88,7 +112,7 @@
               </v-col>
               <v-divider vertical></v-divider>
               <v-col cols="4">
-                <div class="d-flex pa-10 align-center fill-height justify-center">
+                <div class="d-flex pa-10 align-center justify-center">
                   <div class="text-center">
                     <img
                       v-if="imagePreview"
@@ -104,7 +128,7 @@
                       </div>
                       <div v-else>
                         <v-input class="d-inline-block grey--text">
-                          {{$t('imageMaxSize')}} 3 Mb
+                          {{$t('fileMaxSize')}} 3 Mb
                         </v-input>
                       </div>
                     </div>
@@ -117,6 +141,8 @@
                         color="primary"
                         elevation="0"
                       >
+                        <v-icon class="mr-5">mdi-image-outline</v-icon>
+
                         {{imagePreview ? $t('change') : $t('addImage')}}
                       </v-btn>
                       <!--<v-btn
@@ -131,15 +157,66 @@
                     </div>
                   </div>
                 </div>
+                <div class="d-flex pa-10 align-center justify-center">
+                  <div class="text-center">
+                    <video v-if="videoPreview"
+                           class="mb-16"
+                           controls width="100%">
+                      <source :src="videoPreview"
+                              type="video/mp4">
+                      Sorry, your browser doesn't support embedded videos.
+                    </video>
+                    <div class="mb-16" v-else>
+                      <v-icon :color="'#eeeeee'" size="100">mdi-video-outline</v-icon>
+                      <div>
+                        <v-input class="d-inline-block grey--text">
+                          {{$t('fileMaxSize')}} 5 Mb
+                        </v-input>
+                      </div>
+                    </div>
+
+                    <div class="d-flex"
+                         :class="{'justify-center': !videoPreview, 'justify-space-between': videoPreview}">
+                      <v-btn
+                        @click="$refs.videoUpload.click()"
+                        :disabled="savePostLoading"
+                        class="btn-custom-md"
+                        color="primary"
+                        elevation="0"
+                      >
+                        <v-icon class="mr-5">mdi-video-outline</v-icon>
+
+                        {{videoPreview ? $t('change') : $t('addVideo')}}
+                      </v-btn>
+                      <v-btn
+                        v-if="videoPreview"
+                        @click="removeVideo"
+                        :loading="videoRemoveLoading"
+                        :disabled="savePostLoading"
+                        elevation="0"
+                      >
+                        {{$t('remove')}}
+                      </v-btn>
+                    </div>
+                  </div>
+                </div>
 
                 <label v-show="false"
                        ref="imageUpload" for="imageUpload" class="text-center">
                   <v-file-input
                     id="imageUpload"
-                    :rules="imageRules"
                     hide-input
                     accept="image/png, image/jpeg, image/bmp"
                     @change="previewImage"
+                  ></v-file-input>
+                </label>
+                <label v-show="false"
+                       ref="videoUpload" for="videoUpload" class="text-center">
+                  <v-file-input
+                    id="videoUpload"
+                    hide-input
+                    accept="video/mp4"
+                    @change="previewVideo"
                   ></v-file-input>
                 </label>
               </v-col>
@@ -188,6 +265,7 @@
         valid: true,
         loading: false,
         savePostLoading: false,
+        translateLoading: false,
         imageRules: [
           value => !value || value.size < 5000000 || 'Image size should be less than 5 MB!',
         ],
@@ -201,11 +279,16 @@
           descriptionEN: '',
           published: true,
           imageId: '',
-          created: new Date(),
+          videoId: ''
         },
         imageError: false,
         imagePreview: null,
-        imageFile: null
+        imageFile: null,
+
+        videoError: false,
+        videoPreview: null,
+        videoFile: null,
+        videoRemoveLoading: false
       };
     },
     computed: {
@@ -228,12 +311,23 @@
           this.post = await this.$store.dispatch('post/getPost', this.$route.params.id)
 
           this.imagePreview = `${this.$axios.defaults.baseURL}/images/${this.post.imageId}`
+
+          if (this.post.videoId) {
+            this.videoPreview = `${this.$axios.defaults.baseURL}/videos/${this.post.videoId}`
+          }
         } catch (e) {
-          console.error(e)
+          this.$swal.fire({
+            icon: 'error',
+            title: this.$t('error')
+          })
         }
         this.loading = false
       },
       async savePost() {
+        if (this.savePostLoading) {
+          return
+        }
+
         this.$refs.form.validate()
 
         if (!this.imageFile && !this.post.imageId) {
@@ -252,12 +346,17 @@
             this.post.imageId = id
           }
 
+          if (this.videoFile) {
+            const {id} = await this.$store.dispatch('post/uploadVideoPost', this.videoFile)
+            this.post.videoId = id
+          }
+
           if (this.isEdit) {
-            await this.$store.dispatch('post/savePost', this.post)
+            await this.$store.dispatch('post/updatePost', this.post)
             this.$swal.fire({
               icon: 'success',
               showConfirmButton: false,
-              position: 'bottom-right',
+              position: 'top-right',
               timer: 3000,
               toast: true,
               title: this.$t('edited')
@@ -267,13 +366,13 @@
             this.$swal.fire({
               icon: 'success',
               showConfirmButton: false,
-              position: 'bottom-right',
+              position: 'top-right',
               timer: 3000,
               toast: true,
               title: this.$t('added')
             })
+            this.$router.push('/admin/posts')
           }
-          this.$router.push('/admin/posts')
         } catch (e) {
           this.$swal.fire({
             icon: 'error',
@@ -283,21 +382,82 @@
         this.savePostLoading = false
       },
       previewImage(file) {
-        if (file.size >= 3000000) {
-          this.$swal.fire({
-            icon: 'warning',
-            text: this.$t('imageSizeError') + '3 Mb'
-          })
-          return
-        }
+        if (file) {
+          if (file.size >= 3000000) {
+            this.$swal.fire({
+              icon: 'warning',
+              text: this.$t('fileSizeError') + '3 Mb'
+            })
+            return
+          }
 
-        this.imageFile = file
-        this.imagePreview = URL.createObjectURL(file)
+          this.imageFile = file
+          this.imagePreview = URL.createObjectURL(file)
+        }
       },
       removeImage() {
         this.post.imageId = null
         this.imageFile = null
         this.imagePreview = null
+      },
+      previewVideo(file) {
+        if (file) {
+          if (file.size >= 5000000) {
+            this.$swal.fire({
+              icon: 'warning',
+              text: this.$t('fileSizeError') + '5 Mb'
+            })
+            return
+          }
+
+          this.videoPreview = null
+          this.videoFile = file
+          setTimeout(() => {
+            this.videoPreview = URL.createObjectURL(file)
+          }, 100)
+        }
+      },
+      async removeVideo() {
+        if (this.post.videoId) {
+          this.videoRemoveLoading = true
+          try {
+            await this.$store.dispatch('post/deleteVideoPost', this.post)
+            this.post.videoId = null
+
+            this.savePost()
+
+            this.videoFile = null
+            this.videoPreview = null
+          } catch (e) {
+            this.$swal.fire({
+              icon: 'error',
+              title: this.$t('error')
+            })
+          }
+          this.videoRemoveLoading = false
+        } else {
+          this.post.videoId = null
+          this.videoFile = null
+          this.videoPreview = null
+        }
+      },
+      async translate() {
+        this.translateLoading = true
+        try {
+          const translations = await this.$store.dispatch('post/translatePost', this.post)
+
+          this.post.titleEN = translations[0]
+
+          if (translations.length > 1) {
+            this.post.descriptionEN = translations[1]
+          }
+        } catch (e) {
+          this.$swal.fire({
+            icon: 'error',
+            title: this.$t('error')
+          })
+        }
+        this.translateLoading = false
       },
       cancel() {
         this.$router.push('/admin/posts')

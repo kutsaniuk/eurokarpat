@@ -101,11 +101,13 @@ export default {
   changePassword: 'Змінити Пароль',
   newPassword: 'Новий Пароль',
   confirmPassword: 'Підтвертити Пароль',
+  password: 'Пароль',
 
   title: 'Заголовок',
   description: 'Опис',
   created: 'Дата Створення',
   published: 'Опубліковано',
+  notPublished: 'Не Опубліковано',
   actions: 'Дії',
 
   noPosts: 'Новин немає',
@@ -114,18 +116,23 @@ export default {
   cancel: 'Скасувати',
   change: 'Змінити',
   remove: 'Видалити',
+  removeWarning: 'Ви впевнені, що хочете видалити цей пост?',
   publish: 'Опублікувати',
   error: 'Помилка',
-  edited: 'Редаговано',
+  edited: 'Відредаговано',
   added: 'Добавлено',
+  loading: 'Завантаження...',
+  status: 'Статус',
+  translate: 'Перкласти',
 
   editPost: 'Редагувати Пост',
   newPost: 'Новий Пост',
 
   addImage: 'Добавити Фото',
+  addVideo: 'Добавити Відео',
 
   imageRequired: "Фото є обов'язковим",
   titleRequired: "Заголовок не може бути пустим",
-  imageMaxSize: 'Максимум',
-  imageSizeError: 'Фото немає бути більше ніж ',
+  fileMaxSize: 'Максимум',
+  fileSizeError: 'Файл немає бути більше ніж ',
 }

@@ -32,6 +32,7 @@
             <client-only>
               <v-data-table
                 :no-data-text="$t('noPosts')"
+                :loading-text="$t('loading')"
                 :loading="loading"
                 :headers="headers"
                 :items="posts"
@@ -41,13 +42,35 @@
                   <n-link :to="'/admin/posts/edit/' + item.id">{{item.title}}</n-link>
                 </template>
                 <template v-slot:item.description="{ item }">
-                  <div v-html="item.description"></div>
+                  {{truncateHtml(item.description, 10, { byWords: true, stripTags: true })}}
                 </template>
                 <template v-slot:item.published="{ item }">
-                  <v-checkbox
-                    v-model="item.published"
-                    readonly
-                  ></v-checkbox>
+                  <v-chip v-if="item.published" small color="accent">
+                    <v-icon class="mr-3">mdi-earth</v-icon>
+                    {{$t('published')}}
+                  </v-chip>
+                  <v-chip v-else small>
+                    {{$t('notPublished')}}
+                  </v-chip>
+                </template>
+                <template v-slot:item.created="{ item }">
+                  {{getDate(item.created)}}
+                </template>
+                <template v-slot:item.actions="{ item }">
+                  <v-btn
+                    icon
+                    small
+                    :to="'/admin/posts/edit/' + item.id"
+                  >
+                    <v-icon>mdi-pencil</v-icon>
+                  </v-btn>
+                  <v-btn
+                    @click="deletePost(item)"
+                    icon
+                    small
+                  >
+                    <v-icon>mdi-delete</v-icon>
+                  </v-btn>
                 </template>
               </v-data-table>
             </client-only>
@@ -58,6 +81,8 @@
   </v-container>
 </template>
 <script>
+  import truncateHtml from 'truncate-html'
+
   export default {
     data() {
       return {
@@ -69,9 +94,9 @@
             value: 'title',
           },
           {text: this.$t('description'), value: 'description'},
-          {text: this.$t('published'), value: 'published'},
-          {text: this.$t('created'), value: 'created'},
-          {text: this.$t('actions'), value: 'action'},
+          {text: this.$t('status'), value: 'published'},
+          {text: this.$t('created'), value: 'created', width: 150},
+          {text: this.$t('actions'), value: 'actions', width: 120, sortable: false, align: 'center'},
         ]
       };
     },
@@ -84,14 +109,49 @@
       this.getPosts()
     },
     methods: {
+      truncateHtml,
       async getPosts() {
         this.loading = true
         try {
           await this.$store.dispatch('post/getPosts')
         } catch (e) {
-          console.error(e)
+          this.$swal.fire({
+            icon: 'error',
+            title: this.$t('error')
+          })
         }
         this.loading = false
+      },
+      async deletePost(post) {
+        this.$swal.fire({
+          html: `<h3>${this.$t('removeWarning')}</h3>`,
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonText: this.$t('remove'),
+          cancelButtonText: this.$t('cancel'),
+          confirmButtonColor: this.$vuetify.theme.themes.light.error,
+          cancelButtonColor: ''
+        }).then(async (result) => {
+          if (result.isConfirmed) {
+            try {
+              await this.$store.dispatch('post/deletePost', post)
+              this.getPosts()
+            } catch (e) {
+              this.$swal.fire({
+                icon: 'error',
+                title: this.$t('error')
+              })
+            }
+          }
+        })
+      },
+      getDate(date) {
+        let locale = this.$i18n.locale === 'en' ? 'en-gb' : 'uk'
+
+        this.$moment.locale(locale)
+        const localeData = this.$moment.localeData();
+
+        return this.$moment(date).format(localeData.longDateFormat('LL'))
       }
     },
   };

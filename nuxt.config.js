@@ -46,7 +46,8 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
-    "@nuxtjs/vuetify",
+    '@nuxtjs/vuetify',
+    '@nuxtjs/moment'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -133,6 +134,11 @@ export default {
   sweetalert: {
     confirmButtonColor: '#3d5aa6',
     cancelButtonColor: '#C96D85'
+  },
+
+  moment: {
+    defaultLocale: 'uk',
+    locales: ['en-gb', 'uk']
   },
 
   target: 'static'
