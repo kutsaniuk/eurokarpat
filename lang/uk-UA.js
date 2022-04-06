@@ -135,4 +135,6 @@ export default {
   titleRequired: "Заголовок не може бути пустим",
   fileMaxSize: 'Максимум',
   fileSizeError: 'Файл немає бути більше ніж ',
+
+  date: 'Дата',
 }

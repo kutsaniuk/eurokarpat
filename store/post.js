@@ -3,11 +3,13 @@ import truncateHtml from "truncate-html";
 
 export const state = () => ({
   posts: [],
+  publicPosts: []
 })
 
 // getters
 export const getters = {
   posts: state => state.posts,
+  publicPosts: state => state.publicPosts,
 };
 
 // actions
@@ -16,6 +18,12 @@ export const actions = {
     return this.$axios.$get('/posts')
       .then(async (posts) => {
         commit('setPosts', posts);
+      })
+  },
+  async getPublicPosts({commit}) {
+    return this.$axios.$get('/posts/published')
+      .then(async (posts) => {
+        commit('setPublicPosts', posts);
       })
   },
   async getPost({commit}, id) {
@@ -63,5 +71,8 @@ export const actions = {
 export const mutations = {
   setPosts: (state, payload) => {
     state.posts = payload
+  },
+  setPublicPosts: (state, payload) => {
+    state.publicPosts = payload
   }
 }

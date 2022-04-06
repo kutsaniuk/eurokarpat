@@ -31,6 +31,8 @@
           <v-card-text>
             <client-only>
               <v-data-table
+                :sort-by.sync="sortBy"
+                :sort-desc.sync="sortDesc"
                 :no-data-text="$t('noPosts')"
                 :loading-text="$t('loading')"
                 :loading="loading"
@@ -39,10 +41,12 @@
                 hide-default-footer
               >
                 <template v-slot:item.title="{ item }">
-                  <n-link :to="'/admin/posts/edit/' + item.id">{{item.title}}</n-link>
+                  <n-link class="py-5 d-block" :to="'/admin/posts/edit/' + item.id">{{truncateHtml(item.title, 5, { byWords: true })}}</n-link>
                 </template>
                 <template v-slot:item.description="{ item }">
-                  {{truncateHtml(item.description, 10, { byWords: true, stripTags: true })}}
+                  <div class="py-5">
+                    {{truncateHtml(item.description, 10, { byWords: true, stripTags: true })}}
+                  </div>
                 </template>
                 <template v-slot:item.published="{ item }">
                   <v-chip v-if="item.published" small color="accent">
@@ -87,6 +91,8 @@
     data() {
       return {
         loading: true,
+        sortBy: 'created',
+        sortDesc: true,
         headers: [
           {
             text: this.$t('title'),
@@ -95,7 +101,7 @@
           },
           {text: this.$t('description'), value: 'description'},
           {text: this.$t('status'), value: 'published'},
-          {text: this.$t('created'), value: 'created', width: 150},
+          {text: this.$t('created'), value: 'created', width: 170},
           {text: this.$t('actions'), value: 'actions', width: 120, sortable: false, align: 'center'},
         ]
       };

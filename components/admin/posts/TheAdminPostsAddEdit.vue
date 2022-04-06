@@ -58,16 +58,51 @@
                 </v-card-title>
                 <v-card-text>
                   <form>
-                    <v-text-field
-                      :label="$t('title')"
-                      outlined
-                      name="title"
-                      :rules="titleRules"
-                      required
-                      type="text"
-                      v-model="post.title"
-                      :placeholder="$t('title')"
-                    ></v-text-field>
+                    <v-row>
+                      <v-col cols="8">
+                        <v-text-field
+                          :label="$t('title')"
+                          outlined
+                          name="title"
+                          :rules="titleRules"
+                          required
+                          type="text"
+                          v-model="post.title"
+                          :placeholder="$t('title')"
+                        ></v-text-field>
+                      </v-col>
+                      <v-col cols="4">
+                        <v-menu
+                          ref="menu"
+                          v-model="menuDate"
+                          :close-on-content-click="false"
+                          transition="scale-transition"
+                          offset-y
+                          min-width="auto"
+                        >
+                          <template v-slot:activator="{ on, attrs }">
+                            <v-text-field
+                              :value="getDate(post.created)"
+                              :label="$t('date')"
+                              prepend-inner-icon="mdi-calendar"
+                              outlined
+                              readonly
+                              v-bind="attrs"
+                              v-on="on"
+                            ></v-text-field>
+                          </template>
+                          <v-date-picker
+                            @change="setPostDate"
+                            v-model="postDate"
+                            color="primary"
+                            :locale="$i18n.locale"
+                            no-title
+                            scrollable
+                          >
+                          </v-date-picker>
+                        </v-menu>
+                      </v-col>
+                    </v-row>
 
                     <Editor :placeholder="$t('description')"
                             v-model="post.description"/>
@@ -279,7 +314,8 @@
           descriptionEN: '',
           published: true,
           imageId: '',
-          videoId: ''
+          videoId: '',
+          created: new Date()
         },
         imageError: false,
         imagePreview: null,
@@ -288,7 +324,10 @@
         videoError: false,
         videoPreview: null,
         videoFile: null,
-        videoRemoveLoading: false
+        videoRemoveLoading: false,
+
+        menuDate: false,
+        postDate: null
       };
     },
     computed: {
@@ -299,10 +338,12 @@
         return !!this.$route.params.id
       }
     },
-    mounted() {
+    async mounted() {
       if (this.isEdit) {
-        this.getPost()
+        await this.getPost()
       }
+
+      this.postDate = this.$moment(this.post.created).format('YYYY-MM-DD')
     },
     methods: {
       async getPost() {
@@ -315,6 +356,8 @@
           if (this.post.videoId) {
             this.videoPreview = `${this.$axios.defaults.baseURL}/videos/${this.post.videoId}`
           }
+
+
         } catch (e) {
           this.$swal.fire({
             icon: 'error',
@@ -458,6 +501,19 @@
           })
         }
         this.translateLoading = false
+      },
+      setPostDate(date) {
+        this.post.created = new Date(date)
+        this.postDate = date
+        this.menuDate = false
+      },
+      getDate(date) {
+        let locale = this.$i18n.locale === 'en' ? 'en-gb' : 'uk'
+
+        this.$moment.locale(locale)
+        const localeData = this.$moment.localeData();
+
+        return this.$moment(date).format(localeData.longDateFormat('LL'))
       },
       cancel() {
         this.$router.push('/admin/posts')

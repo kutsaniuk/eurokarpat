@@ -138,7 +138,12 @@ export default {
 
   moment: {
     defaultLocale: 'uk',
-    locales: ['en-gb', 'uk']
+    locales: ['en-gb', 'uk'],
+    timezone: {
+      matchZones: /Europe\/(Belfast|London|Paris|Athens)/,
+      startYear: 2000,
+      endYear: 2030
+    }
   },
 
   target: 'static'

@@ -135,4 +135,6 @@ export default {
   titleRequired: 'Title is required',
   imageMaxSize: 'Maximum',
   fileSizeError: 'File will not be more than ',
+
+  date: 'Date'
 }
