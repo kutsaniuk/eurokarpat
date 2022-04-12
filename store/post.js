@@ -36,23 +36,34 @@ export const actions = {
     return this.$axios.$put('/posts/' + post.id, post)
   },
   async deletePost({commit, dispatch}, post) {
-    await this.$axios.$delete('/images/' + post.imageId)
+    await dispatch('deleteImagePost', post)
     if (post.videoId) {
       await dispatch('deleteVideoPost', post)
     }
     return this.$axios.$delete('/posts/' + post.id)
   },
   async deleteVideoPost({commit}, post) {
-    return await this.$axios.$delete('/videos/' + post.videoId)
+    if (post.videoId) {
+      return this.$axios.$delete('/videos/' + post.videoId)
+    }
   },
-  async uploadImagePost({commit}, image) {
+  async deleteImagePost({commit}, post) {
+    if (post.imageId) {
+      return this.$axios.$delete('/images/' + post.imageId)
+    }
+  },
+  async uploadImagePost({commit, dispatch}, {image, post}) {
     const formData = new FormData()
     formData.append('image', image)
+    formData.append('postId', post.id)
+    await dispatch('deleteImagePost', post)
     return this.$axios.$post('/images/upload', formData)
   },
-  async uploadVideoPost({commit}, image) {
+  async uploadVideoPost({commit, dispatch}, {video, post}) {
     const formData = new FormData()
-    formData.append('video', image)
+    formData.append('video', video)
+    formData.append('postId', post.id)
+    await dispatch('deleteVideoPost', post)
     return this.$axios.$post('/videos/upload', formData)
   },
   async translatePost({commit}, post) {
@@ -61,7 +72,7 @@ export const actions = {
     if (!!truncateHtml(post.description, 1, { byWords: true, stripTags: true })) {
       text.push(post.description)
     }
-    return this.$axios.$post('/posts/translate', {
+    return this.$axios.$post('/translate', {
       text
     })
   },

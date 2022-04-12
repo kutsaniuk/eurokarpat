@@ -62,6 +62,7 @@
         mini: false,
         items: [
           ['mdi-text-box-multiple-outline', 'posts', '/admin/posts'],
+          ['mdi-account-supervisor', 'team', '/admin/members'],
           // ['mdi-account-supervisor', 'users', '/admin/users'],
           // ['mdi-account', 'profile', '/admin/me'],
           ['mdi-logout', 'logout', '/login'],

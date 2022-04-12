@@ -113,10 +113,11 @@ export default {
   noPosts: 'Новин немає',
 
   create: 'Створити',
+  add: 'Додати',
   cancel: 'Скасувати',
   change: 'Змінити',
   remove: 'Видалити',
-  removeWarning: 'Ви впевнені, що хочете видалити цей пост?',
+  removeWarning: 'Ви впевнені, що хочете видалити це?',
   publish: 'Опублікувати',
   error: 'Помилка',
   edited: 'Відредаговано',
@@ -135,6 +136,14 @@ export default {
   titleRequired: "Заголовок не може бути пустим",
   fileMaxSize: 'Максимум',
   fileSizeError: 'Файл немає бути більше ніж ',
+  fullNameRequired: "Повне ім'я не може бути пустим",
+  positionRequired: "Посада є обов'язкова",
+  urlInvalid: 'Неправильний URL-адрес',
 
   date: 'Дата',
+
+  team: 'Команда',
+  noMembers: 'Немає даних',
+  position: 'Посада',
+  newMember: 'Новий член команди',
 }

@@ -27,8 +27,8 @@
         </v-dialog>
 
         <v-row justify="center">
-          <v-col cols="12" md="6" lg="4" v-for="post in posts.slice(0, showMore ? 100 : 3)">
-            <v-card elevation="0" class="blog-card overflow-hidden mb-15">
+          <v-col cols="12" md="6" lg="4" v-for="(post, i) in posts.slice(0, showMore ? 100 : 3)">
+            <v-card :key="i" elevation="0" class="blog-card overflow-hidden mb-15">
               <div @click="openPostDialog(post)" class="position-relative mb-15">
                 <v-img
                   :src="`${$axios.defaults.baseURL}/images/${post.imageId}`"

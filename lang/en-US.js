@@ -113,10 +113,11 @@ export default {
   noPosts: 'No Posts',
 
   create: 'Create',
+  add: 'Add',
   cancel: 'Cancel',
   change: 'Change',
   remove: 'Delete',
-  removeWarning: 'Are you sure you want to delete this post?',
+  removeWarning: 'Are you sure you want to delete this?',
   publish: 'Publish',
   error: 'Error',
   edited: 'Edited',
@@ -135,6 +136,14 @@ export default {
   titleRequired: 'Title is required',
   imageMaxSize: 'Maximum',
   fileSizeError: 'File will not be more than ',
+  fullNameRequired: 'Full Name is required',
+  positionRequired: 'Position is required',
+  urlInvalid: 'URL must be valid',
 
-  date: 'Date'
+  date: 'Date',
+
+  team: 'Team',
+  noMembers: 'No members',
+  position: 'Position',
+  newMember: 'New Member'
 }
