@@ -9,8 +9,9 @@
   .social-overlay {
     position: relative;
     .img-overlay {
-      background: rgba(26, 139, 243, 0.87);
-      display: none;
+      background: rgb(8 8 8 / 60%);
+      opacity: 0;
+      transition: .3s;
       position: absolute;
       top: 0;
       right: 0;
@@ -18,9 +19,12 @@
       left: 0;
       padding: 1.25rem;
       border-radius: calc(0.25rem - 1px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       ul {
         position: relative;
-        top: 50%;
+        //top: 50%;
         display: flex;
         justify-content: center;
         list-style: none;
@@ -35,12 +39,19 @@
               transform: translate3d(0px, -5px, 0px);
             }
           }
+
+          i {
+            font-size: 40px;
+          }
         }
       }
     }
     &:hover {
+      .v-image {
+        filter: blur(2px);
+      }
       .img-overlay {
-        display: block;
+        opacity: 1;
       }
     }
   }

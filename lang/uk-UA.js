@@ -142,8 +142,8 @@ export default {
 
   date: 'Дата',
 
-  team: 'Команда',
-  noMembers: 'Немає даних',
+  team: 'Учасники',
+  noMembers: 'Немає учасників',
   position: 'Посада',
-  newMember: 'Новий член команди',
+  newMember: 'Новий Учасник',
 }

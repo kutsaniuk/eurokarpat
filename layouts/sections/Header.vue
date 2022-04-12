@@ -37,6 +37,9 @@
               <li class="nav-item" text>
                 <a class="nav-link" href="#help" @click.prevent="goTo">{{$t('howWeHelp')}}</a>
               </li>
+              <li v-if="members.length" class="nav-item" text>
+                <a class="nav-link" href="#team" @click.prevent="goTo">{{$t('team')}}</a>
+              </li>
               <li class="nav-item" text>
                 <a class="nav-link" href="#about" @click.prevent="goTo">{{$t('about')}}</a>
               </li>
@@ -113,6 +116,11 @@
       return {
         isActive: false,
       };
+    },
+    computed: {
+      members() {
+        return this.$store.state.member.publicMembers
+      }
     },
     methods: {
       toggleClass: function (event) {

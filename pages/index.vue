@@ -8,6 +8,8 @@
       <TheBlog/>
     </div>
 
+    <TheTeam/>
+
     <TheAbout/>
     <TheCta/>
 
@@ -21,7 +23,8 @@
       TheHelp: () => import("@/components/TheHelp"),
       TheBlog: () => import("@/components/TheBlog"),
       TheCta: () => import("@/components/TheCta"),
-      TheAbout: () => import("@/components/TheAbout")
+      TheAbout: () => import("@/components/TheAbout"),
+      TheTeam: () => import("@/components/TheTeam")
     },
     mounted() {
       this.$nextTick(() => {
