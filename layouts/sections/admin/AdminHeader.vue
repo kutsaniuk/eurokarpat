@@ -1,5 +1,50 @@
 <template>
   <div>
+    <v-app-bar
+      v-if="$vuetify.breakpoint.mdAndDown"
+      color="white"
+      fixed
+      elevate-on-scroll
+    >
+      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+
+      <!--      <v-toolbar-title>Title</v-toolbar-title>-->
+
+
+      <v-btn plain active-class="primary--text" text nuxt to="/admin/posts">
+        <v-icon class="mr-5">mdi-text-box-multiple-outline</v-icon> {{$t('posts')}}
+      </v-btn>
+
+      <v-btn plain active-class="primary--text" text nuxt to="/admin/members">
+        <v-icon class="mr-5">mdi-account-supervisor</v-icon> {{$t('team')}}
+      </v-btn>
+
+      <v-spacer></v-spacer>
+
+      <v-menu offset-y>
+        <template v-slot:activator="{ on, attrs }">
+          <div v-bind="attrs"
+               v-on="on">
+            <span v-if="$vuetify.breakpoint.smAndUp" class="black--text mr-5">{{user.fullName}}</span>
+            <v-avatar
+              :size="30"
+              :color="user.color"
+              class="font-weight-bold"
+            >
+              <span class="white--text">{{avatarName}}</span>
+            </v-avatar>
+          </div>
+        </template>
+        <v-list>
+          <v-list-item to="/login">
+            <v-list-item-content>
+              <v-list-item-title><v-icon>mdi-logout</v-icon> {{$t('logout')}}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
+      </v-menu>
+    </v-app-bar>
+
     <v-navigation-drawer
       v-model="drawer"
       dark

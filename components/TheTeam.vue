@@ -86,8 +86,8 @@
             Start Team
         ----------------------------------------------- -->
         <v-row class="mt-13">
-          <v-col cols="12" md="6" lg="3" v-for="(member, i) in members">
-            <v-card @click="openMemberDialog(member)" :key="i" elevation="0" class="team-card overflow-hidden mb-15">
+          <v-col :key="i" cols="12" md="6" lg="3" v-for="(member, i) in members">
+            <v-card  @click="openMemberDialog(member)"  elevation="0" class="team-card overflow-hidden mb-15">
               <div class="social-overlay">
                 <v-img
                   :height="250"

@@ -1,7 +1,7 @@
 <template>
   <v-app dark>
     <AdminHeader/>
-    <v-main id="admin">
+    <v-main id="admin" :class="{'mt-16 pt-10': $vuetify.breakpoint.xsOnly, 'mt-16 pt-sm-16': $vuetify.breakpoint.mdAndDown}">
       <v-container
         class="py-8 px-6"
         fluid
