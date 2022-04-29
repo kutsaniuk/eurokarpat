@@ -118,7 +118,7 @@ export default {
 					user: false
 				},
 				user: {
-					property: 'user', // <--- Default "user"
+					property: 'user',
 					autoFetch: true
 				},
 			}
