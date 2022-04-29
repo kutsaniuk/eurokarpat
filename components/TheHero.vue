@@ -3,11 +3,18 @@
     <div class="mini-spacer">
       <v-container>
         <v-row justify="center">
-          <v-col cols="12" sm="10" md="12" lg="12">
+          <v-col
+            cols="12"
+            sm="10"
+            md="12"
+            lg="12"
+          >
             <div class="text-center mt-sm-2">
-              <h2 class="ui-title font-weight-bold"> {{$t('heroTitle')}}</h2>
+              <h2 class="ui-title font-weight-bold">
+                {{ $t('heroTitle') }}
+              </h2>
               <p>
-                {{$t('heroDesc')}}
+                {{ $t('heroDesc') }}
               </p>
               <v-btn
                 class="btn-custom-nm d-inline-flex d-lg-none cta font-weight-bold"
@@ -17,7 +24,7 @@
                 color="primary"
                 elevation="0"
               >
-                {{$t('donate')}}
+                {{ $t('donate') }}
               </v-btn>
             </div>
           </v-col>
@@ -27,12 +34,12 @@
   </div>
 </template>
 <script>
-  export default {
-    data() {
-      return {};
-    },
-    methods: {},
-  };
+export default {
+	data() {
+		return {}
+	},
+	methods: {},
+}
 </script>
 <style lang="scss" scoped>
   .mini-spacer {

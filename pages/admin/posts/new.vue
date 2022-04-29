@@ -1,15 +1,17 @@
 <template>
   <div>
-    <TheAdminPostsAddEdit/>
+    <TheAdminPostsAddEdit />
   </div>
 </template>
 
 <script>
-  export default {
-    middleware: 'auth',
-    layout: 'admin',
-    components: {
-      TheAdminPostsAddEdit: () => import("@/components/admin/posts/TheAdminPostsAddEdit.vue")
-    }
-  };
+import TheAdminPostsAddEdit from '@/components/admin/posts/TheAdminPostsAddEdit.vue'
+
+export default {
+	middleware: 'auth',
+	layout: 'admin',
+	components: {
+		TheAdminPostsAddEdit
+	}
+}
 </script>

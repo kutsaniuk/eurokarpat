@@ -1,14 +1,16 @@
 <template>
   <div>
-    <TheAuthLogin/>
+    <TheAuthLogin />
   </div>
 </template>
 
 <script>
-  export default {
-    layout: 'empty',
-    components: {
-      TheAuthLogin: () => import("@/components/auth/TheAuthLogin.vue")
-    }
-  };
+import TheAuthLogin from '@/components/auth/TheAuthLogin.vue'
+
+export default {
+	layout: 'empty',
+	components: {
+		TheAuthLogin
+	}
+}
 </script>

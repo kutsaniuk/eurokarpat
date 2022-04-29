@@ -1,14 +1,16 @@
 <template>
   <div>
-    <TheAdminProfile/>
+    <TheAdminProfile />
   </div>
 </template>
 
 <script>
-  export default {
-    layout: 'admin',
-    components: {
-      TheAdminProfile: () => import("@/components/admin/TheAdminProfile.vue")
-    }
-  };
+import TheAdminProfile from '@/components/admin/TheAdminProfile.vue'
+
+export default {
+	layout: 'admin',
+	components: {
+		TheAdminProfile
+	}
+}
 </script>

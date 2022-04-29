@@ -1,6 +1,5 @@
 <template>
   <v-app dark>
-    <!--v-if="$route.name!=='login'"-->
     <Header />
     <v-main>
       <nuxt />
@@ -10,25 +9,28 @@
 </template>
 
 <script>
+import  Header from '@/layouts/sections/Header'
+import Footer from '@/layouts/sections/Footer'
+
 export default {
-  head() {
-    return {
-      title: "NuxtJs UI kit | Free UI kit built with Vuetify",
-      meta: [
-        {
-          hid: "description",
-          name: "NuxtJs UI kit",
-          content: "NuxtJs UI kit is the best way"
-        }
-      ]
-    };
-  },
-  components: {
-    Header: () => import("@/layouts/sections/Header"),
-    Footer: () => import("@/layouts/sections/Footer")
-  },
-  methods: {}
-};
+	head() {
+		return {
+			title: 'NuxtJs UI kit | Free UI kit built with Vuetify',
+			meta: [
+				{
+					hid: 'description',
+					name: 'NuxtJs UI kit',
+					content: 'NuxtJs UI kit is the best way'
+				}
+			]
+		}
+	},
+	components: {
+		Header,
+		Footer
+	},
+	methods: {}
+}
 </script>
 
 <style></style>

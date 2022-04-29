@@ -1,12 +1,12 @@
 <template>
-  <div></div>
+  <div />
 </template>
 
 <script>
 export default {
-  layout: "admin",
-  mounted() {
-    this.$router.push('/admin/posts')
-  }
-};
+	layout: 'admin',
+	mounted() {
+		this.$router.push('/admin/posts')
+	}
+}
 </script>

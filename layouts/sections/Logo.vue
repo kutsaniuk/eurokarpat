@@ -11,12 +11,12 @@
 
 <script>
 export default {
-  name: "Logo",
+	name: 'Logo',
 
-  data() {
-    return {};
-  },
-};
+	data() {
+		return {}
+	},
+}
 </script>
 
 <style lang="scss">

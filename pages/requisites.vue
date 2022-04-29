@@ -1,13 +1,15 @@
 <template>
   <div>
-    <TheDonate/>
+    <TheDonate />
   </div>
 </template>
 
 <script>
-  export default {
-    components: {
-      TheDonate: () => import("@/components/donate/TheDonate.vue")
-    }
-  };
+import TheDonate from '@/components/donate/TheDonate.vue'
+
+export default {
+	components: {
+		TheDonate
+	}
+}
 </script>

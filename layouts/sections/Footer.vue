@@ -2,44 +2,89 @@
   <!-- -----------------------------------------------
         Start Footer
   ----------------------------------------------- -->
-  <v-footer  id="contacts" class="footer">
+  <v-footer
+    id="contacts"
+    class="footer"
+  >
     <v-container>
       <v-row class="py-0 py-md-15">
         <!-- -----------------------------------------------
         First Column
       ----------------------------------------------- -->
-        <v-col cols="12" sm="12" md="12" lg="3" class="px-xs-0">
-          <h4 class="font-weight-regular font-18">{{$t('address')}}</h4>
-          <p class="mt-10">{{$t('location')}}</p>
+        <v-col
+          cols="12"
+          sm="12"
+          md="12"
+          lg="3"
+          class="px-xs-0"
+        >
+          <h4 class="font-weight-regular font-18">
+            {{ $t('address') }}
+          </h4>
+          <p class="mt-10">
+            {{ $t('location') }}
+          </p>
         </v-col>
         <!-- -----------------------------------------------
         Second Column
       ----------------------------------------------- -->
-        <v-col cols="12" sm="12" md="12" lg="3" class="px-xs-0">
-          <h4 class="font-weight-regular font-18">{{$t('phone')}}</h4>
-          <p class="mt-10 mb-0">+380 (68) 629 40 26</p>
+        <v-col
+          cols="12"
+          sm="12"
+          md="12"
+          lg="3"
+          class="px-xs-0"
+        >
+          <h4 class="font-weight-regular font-18">
+            {{ $t('phone') }}
+          </h4>
+          <p class="mt-10 mb-0">
+            +380 (68) 629 40 26
+          </p>
         </v-col>
         <!-- -----------------------------------------------
         Third Column
       ----------------------------------------------- -->
-        <v-col cols="12" sm="12" md="12" lg="3" class="px-xs-0">
-          <h4 class="font-weight-regular font-18">{{$t('email')}}</h4>
+        <v-col
+          cols="12"
+          sm="12"
+          md="12"
+          lg="3"
+          class="px-xs-0"
+        >
+          <h4 class="font-weight-regular font-18">
+            {{ $t('email') }}
+          </h4>
           <p class="mt-10 mb-0">
-            <a class="dark-link" href="mailto:eurocarpathian@gmail.com">eurocarpathian@gmail.com</a>
+            <a
+              class="dark-link"
+              href="mailto:eurocarpathian@gmail.com"
+            >eurocarpathian@gmail.com</a>
           </p>
         </v-col>
         <!-- -----------------------------------------------
         Fourth Column
       ----------------------------------------------- -->
-        <v-col cols="12" sm="12" md="12" lg="3" class="px-xs-0">
-          <h4 class="font-weight-regular font-18">{{$t('social')}}</h4>
+        <v-col
+          cols="12"
+          sm="12"
+          md="12"
+          lg="3"
+          class="px-xs-0"
+        >
+          <h4 class="font-weight-regular font-18">
+            {{ $t('social') }}
+          </h4>
 
           <div class="social-icons mt-10">
-            <a target="_blank" href="https://www.facebook.com/%D0%93%D0%9E-%D0%84%D0%B2%D1%80%D0%BE%D0%BA%D0%B0%D1%80%D0%BF%D0%B0%D1%82%D1%81%D1%8C%D0%BA%D0%B0-%D1%96%D0%BD%D1%96%D1%86%D1%96%D0%B0%D1%82%D0%B8%D0%B2%D0%B0-100890395904430/">
-              <i class="mdi mdi-facebook"></i>
+            <a
+              target="_blank"
+              href="https://www.facebook.com/%D0%93%D0%9E-%D0%84%D0%B2%D1%80%D0%BE%D0%BA%D0%B0%D1%80%D0%BF%D0%B0%D1%82%D1%81%D1%8C%D0%BA%D0%B0-%D1%96%D0%BD%D1%96%D1%86%D1%96%D0%B0%D1%82%D0%B8%D0%B2%D0%B0-100890395904430/"
+            >
+              <i class="mdi mdi-facebook" />
             </a>
             <a href="#">
-              <i class="mdi mdi-instagram"></i>
+              <i class="mdi mdi-instagram" />
             </a>
           </div>
         </v-col>
@@ -47,18 +92,26 @@
       <div class="footer-bottom-bar font-14">
         <div class="d-block d-md-flex align-center justify-center">
           <p>
-            {{$t('copyright')}}
+            {{ $t('copyright') }}
           </p>
-<!--          <div class="ml-auto">-->
-<!--            <div class="d-flex align-center">-->
-<!--              <a href="/" class="link px-4">Terms of Use</a>-->
-<!--              <a href="/" class="link px-4">Legal Disclaimer</a>-->
-<!--              <a href="/" class="link px-4">Privacy Policy</a>-->
-<!--            </div>-->
-<!--          </div>-->
+          <!--          <div class="ml-auto">-->
+          <!--            <div class="d-flex align-center">-->
+          <!--              <a href="/" class="link px-4">Terms of Use</a>-->
+          <!--              <a href="/" class="link px-4">Legal Disclaimer</a>-->
+          <!--              <a href="/" class="link px-4">Privacy Policy</a>-->
+          <!--            </div>-->
+          <!--          </div>-->
         </div>
-        <a href="https://www.upwork.com/freelancers/~01aa0623459a6b59d3" target="_blank" class="d-block text-center mt-16">
-          <img width="140" :src="require('@/assets/images/powered.svg')" alt="">
+        <a
+          href="https://www.upwork.com/freelancers/~01aa0623459a6b59d3"
+          target="_blank"
+          class="d-block text-center mt-16"
+        >
+          <img
+            width="140"
+            :src="require('@/assets/images/powered.svg')"
+            alt=""
+          >
         </a>
       </div>
     </v-container>
@@ -70,12 +123,11 @@
 
 <script>
 export default {
-  name: "Footer",
-  data() {
-    return {
-      data: [],
-    };
-  },
-  components: {},
-};
+	name: 'Footer',
+	data() {
+		return {
+			data: [],
+		}
+	}
+}
 </script>
